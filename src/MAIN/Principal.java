@@ -29,6 +29,7 @@ public class Principal {
  
     public static void main(String[] args) {
         //Abrir pantalla Principal
+        // Proyecto Starbucks
         pantallaPrincipal.setVisible(true);
         pantallaPrincipal.setSize(610, 510);
     }
