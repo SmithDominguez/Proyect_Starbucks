@@ -30,6 +30,7 @@ public class Principal {
     public static void main(String[] args) {
         //Abrir pantalla Principal
         // Proyecto Starbucks
+        // Comentario Prueba
         pantallaPrincipal.setVisible(true);
         pantallaPrincipal.setSize(610, 510);
     }
