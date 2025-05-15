@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import MAIN.Principal;
 /**
  *
- * @author sofia
+ * @author nobody
  */
 public class Frm_InicioSesion extends javax.swing.JFrame {
     

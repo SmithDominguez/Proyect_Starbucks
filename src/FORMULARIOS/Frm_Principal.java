@@ -8,7 +8,7 @@ import java.awt.Color;
 import MAIN.Principal;
 /**
  *
- * @author sofia
+ * @author nobody
  */
 public class Frm_Principal extends javax.swing.JFrame {
 
