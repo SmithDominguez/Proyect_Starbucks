@@ -28,6 +28,7 @@ public class Principal {
     public static Frm_InicioSesion pantallaSesion = new Frm_InicioSesion();
  
     public static void main(String[] args) {
+        //Abrir pantalla Principal
         pantallaPrincipal.setVisible(true);
         pantallaPrincipal.setSize(610, 510);
     }
