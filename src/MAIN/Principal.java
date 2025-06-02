@@ -31,6 +31,7 @@ public class Principal {
         //Abrir pantalla Principal
         // Proyecto Starbucks
         // Comentario Prueba
+        // Comentario del Domingo
         pantallaPrincipal.setVisible(true);
         pantallaPrincipal.setSize(610, 510);
     }
