@@ -33,7 +33,8 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
             btn.setOpaque(true);
             btn.setBackground(Color.WHITE);
         }
-        this.setSize(890,550);
+        this.setSize(1000,600);
+        this.setLocationRelativeTo(null);
     }
     final boolean[] isPressed = new boolean[7];
     
@@ -86,6 +87,25 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
         jPanel15 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INICIO_SESION_GERENTE");
@@ -367,13 +387,70 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
         jLabel10.setText("CLIENTES");
         jPanel15.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, 660, 40));
 
-        Panel_Clientes.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 60));
+        Panel_Clientes.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 60));
 
         jPanel16.setBackground(new java.awt.Color(255, 252, 242));
         jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Panel_Clientes.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 680, 450));
 
-        jPanel1.add(Panel_Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 650, 480));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Nombre", "Apellido", "Telefono", "Dirección", "Género", "Fec_Nac"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel16.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 380, 230));
+
+        jLabel3.setText("Nombre:");
+        jPanel16.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, -1, -1));
+        jPanel16.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, 120, -1));
+
+        jLabel11.setText("Apellido:");
+        jPanel16.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, -1, -1));
+        jPanel16.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 120, -1));
+
+        jLabel12.setText("Telefono:");
+        jPanel16.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, -1, -1));
+        jPanel16.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 120, -1));
+
+        jLabel13.setText("Dirección:");
+        jPanel16.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 210, -1, -1));
+        jPanel16.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 120, -1));
+
+        jLabel14.setText("Género:");
+        jPanel16.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, -1, -1));
+
+        jRadioButton1.setText("Femenino");
+        jPanel16.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, -1, -1));
+
+        jRadioButton2.setText("Masculino");
+        jPanel16.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 270, -1, -1));
+
+        jLabel15.setText("Fec_Nac:");
+        jPanel16.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, -1, -1));
+        jPanel16.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 330, 130, -1));
+
+        jButton1.setText("Registrar");
+        jPanel16.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
+
+        jButton2.setText("Modificar");
+        jPanel16.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
+
+        jButton3.setText("Limpiar");
+        jPanel16.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
+
+        jButton4.setText("Eliminar");
+        jPanel16.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, -1, -1));
+
+        Panel_Clientes.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 720, 460));
+
+        jPanel1.add(Panel_Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 1400, 480));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 520));
 
@@ -480,9 +557,19 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
     private javax.swing.JButton btn_Ordenes;
     private javax.swing.JButton btn_Reclamos;
     private javax.swing.JButton btn_Usuarios;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -505,5 +592,14 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }
