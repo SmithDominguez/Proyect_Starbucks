@@ -33,8 +33,9 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
             btn.setOpaque(true);
             btn.setBackground(Color.WHITE);
         }
-        this.setSize(1000,600);
-        this.setLocationRelativeTo(null);
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 600));
+
+       // this.pack(); // Se ajusta al contenido visible
     }
     final boolean[] isPressed = new boolean[7];
     
@@ -260,7 +261,7 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
         jLabel2.setText("Bienvenido(a) a");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, 30));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 510));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 620));
 
         Panel_Inventario.setFocusCycleRoot(true);
         Panel_Inventario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -271,15 +272,15 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("INVENTARIO");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, 640, 40));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, 1040, 40));
 
-        Panel_Inventario.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 60));
+        Panel_Inventario.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1310, 60));
 
         jPanel4.setBackground(new java.awt.Color(255, 252, 242));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Panel_Inventario.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 650, 420));
+        Panel_Inventario.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1550, 600));
 
-        jPanel1.add(Panel_Inventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 650, 480));
+        jPanel1.add(Panel_Inventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 1400, 580));
 
         Panel_Ordenes.setFocusCycleRoot(true);
         Panel_Ordenes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -309,15 +310,15 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("RECLAMOS");
-        jPanel7.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, 660, 40));
+        jPanel7.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, 1410, 40));
 
-        Panel_Reclamos.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 60));
+        Panel_Reclamos.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1450, 60));
 
         jPanel8.setBackground(new java.awt.Color(255, 252, 242));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Panel_Reclamos.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 680, 450));
+        Panel_Reclamos.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1400, 800));
 
-        jPanel1.add(Panel_Reclamos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 650, 480));
+        jPanel1.add(Panel_Reclamos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 1400, 600));
 
         Panel_Horarios.setFocusCycleRoot(true);
         Panel_Horarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -347,15 +348,15 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("USUARIOS");
-        jPanel11.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, 660, 40));
+        jPanel11.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, 600, 40));
 
-        Panel_Usuarios.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 60));
+        Panel_Usuarios.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 60));
 
         jPanel12.setBackground(new java.awt.Color(255, 252, 242));
         jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Panel_Usuarios.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 680, 450));
+        Panel_Usuarios.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1400, 600));
 
-        jPanel1.add(Panel_Usuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 650, 480));
+        jPanel1.add(Panel_Usuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 1400, 600));
 
         Panel_Menu.setFocusCycleRoot(true);
         Panel_Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -387,7 +388,7 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
         jLabel10.setText("CLIENTES");
         jPanel15.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, 660, 40));
 
-        Panel_Clientes.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 60));
+        Panel_Clientes.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 60));
 
         jPanel16.setBackground(new java.awt.Color(255, 252, 242));
         jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -448,7 +449,7 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
         jButton4.setText("Eliminar");
         jPanel16.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, -1, -1));
 
-        Panel_Clientes.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 720, 460));
+        Panel_Clientes.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1400, 600));
 
         jPanel1.add(Panel_Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 1400, 480));
 
