@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
    
 import FORMULARIOS.Frm_Principal;
 import FORMULARIOS.Frm_InicioSesion;
+
 import java.util.List;
 import javax.swing.SwingUtilities;
 /**
@@ -26,6 +27,7 @@ public class Principal {
     
     public static Frm_Principal pantallaPrincipal = new Frm_Principal();
     public static Frm_InicioSesion pantallaSesion = new Frm_InicioSesion();
+    
  
     public static void main(String[] args) {
         //Abrir pantalla Principal

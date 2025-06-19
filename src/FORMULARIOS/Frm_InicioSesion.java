@@ -22,12 +22,12 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
         this.setLocationRelativeTo(this);
         JButton[] botones = {
             btn_Ordenes,
-            btn_Inventario,
+          
             btn_Reclamos,
             btn_Horarios,
-            btn_Usuarios,
+           
             btn_Menu,
-            btn_Clientes
+            
         };
         for (JButton btn : botones) {
             btn.setOpaque(true);
@@ -52,61 +52,73 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btn_Cerrar = new javax.swing.JButton();
         btn_Ordenes = new javax.swing.JButton();
-        btn_Inventario = new javax.swing.JButton();
-        btn_Clientes = new javax.swing.JButton();
         btn_Menu = new javax.swing.JButton();
         btn_Reclamos = new javax.swing.JButton();
         btn_Horarios = new javax.swing.JButton();
-        btn_Usuarios = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        Panel_Inventario = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
         Panel_Ordenes = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jTextField13 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        jTextField14 = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
         Panel_Reclamos = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jTextField3 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         Panel_Horarios = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
-        Panel_Usuarios = new javax.swing.JPanel();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jTextField10 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
         Panel_Menu = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
-        Panel_Clientes = new javax.swing.JPanel();
-        jPanel15 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jPanel16 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
         jLabel15 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jTextField7 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INICIO_SESION_GERENTE");
@@ -144,46 +156,12 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
                 btn_OrdenesActionPerformed(evt);
             }
         });
-        jPanel2.add(btn_Ordenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 160, 30));
+        jPanel2.add(btn_Ordenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 160, 30));
         //Main
-
-        btn_Inventario.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_Inventario.setForeground(new java.awt.Color(0, 89, 102));
-        btn_Inventario.setText("Inventario");
-        btn_Inventario.setBorder(null);
-        btn_Inventario.setBorderPainted(false);
-        btn_Inventario.setContentAreaFilled(false);
-        btn_Inventario.setDefaultCapable(false);
-        btn_Inventario.setFocusCycleRoot(true);
-        btn_Inventario.setFocusPainted(false);
-        btn_Inventario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_Inventario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_InventarioActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btn_Inventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 160, 30));
-
-        btn_Clientes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_Clientes.setForeground(new java.awt.Color(0, 89, 102));
-        btn_Clientes.setText("Clientes");
-        btn_Clientes.setBorder(null);
-        btn_Clientes.setBorderPainted(false);
-        btn_Clientes.setContentAreaFilled(false);
-        btn_Clientes.setDefaultCapable(false);
-        btn_Clientes.setFocusCycleRoot(true);
-        btn_Clientes.setFocusPainted(false);
-        btn_Clientes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_Clientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_ClientesActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btn_Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 160, 30));
 
         btn_Menu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_Menu.setForeground(new java.awt.Color(0, 89, 102));
-        btn_Menu.setText("Menú");
+        btn_Menu.setText("Reportes");
         btn_Menu.setBorder(null);
         btn_Menu.setBorderPainted(false);
         btn_Menu.setContentAreaFilled(false);
@@ -196,7 +174,7 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
                 btn_MenuActionPerformed(evt);
             }
         });
-        jPanel2.add(btn_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 160, 30));
+        jPanel2.add(btn_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 160, 30));
 
         btn_Reclamos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_Reclamos.setForeground(new java.awt.Color(0, 89, 102));
@@ -232,23 +210,6 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
         });
         jPanel2.add(btn_Horarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 160, 30));
 
-        btn_Usuarios.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_Usuarios.setForeground(new java.awt.Color(0, 89, 102));
-        btn_Usuarios.setText("Usuarios");
-        btn_Usuarios.setBorder(null);
-        btn_Usuarios.setBorderPainted(false);
-        btn_Usuarios.setContentAreaFilled(false);
-        btn_Usuarios.setDefaultCapable(false);
-        btn_Usuarios.setFocusCycleRoot(true);
-        btn_Usuarios.setFocusPainted(false);
-        btn_Usuarios.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_Usuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_UsuariosActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btn_Usuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 160, 30));
-
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 89, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -263,25 +224,6 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 620));
 
-        Panel_Inventario.setFocusCycleRoot(true);
-        Panel_Inventario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("INVENTARIO");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, 1040, 40));
-
-        Panel_Inventario.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1310, 60));
-
-        jPanel4.setBackground(new java.awt.Color(255, 252, 242));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Panel_Inventario.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1550, 600));
-
-        jPanel1.add(Panel_Inventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 1400, 580));
-
         Panel_Ordenes.setFocusCycleRoot(true);
         Panel_Ordenes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -290,16 +232,35 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("ORDENES");
-        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, 660, 40));
+        jLabel5.setText("ENVIAR SOLICITUD DE COMPRA");
+        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, 1400, 40));
 
-        Panel_Ordenes.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 60));
+        Panel_Ordenes.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1450, 60));
 
         jPanel6.setBackground(new java.awt.Color(255, 252, 242));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Panel_Ordenes.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 680, 450));
 
-        jPanel1.add(Panel_Ordenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 650, 480));
+        jLabel22.setText("Correo :");
+        jPanel6.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, -1, -1));
+        jPanel6.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 190, -1));
+
+        jLabel23.setText("Asunto :");
+        jPanel6.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
+        jPanel6.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 190, -1));
+
+        jLabel24.setText("Mensaje :");
+        jPanel6.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, -1));
+        jPanel6.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 190, 160));
+
+        jButton4.setBackground(new java.awt.Color(0, 102, 102));
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Enviar");
+        jPanel6.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, -1, -1));
+
+        Panel_Ordenes.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1400, 540));
+
+        jPanel1.add(Panel_Ordenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 1400, 800));
 
         Panel_Reclamos.setFocusCycleRoot(true);
         Panel_Reclamos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -316,6 +277,50 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(255, 252, 242));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setText("Cliente :");
+        jPanel8.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, -1, -1));
+        jPanel8.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 210, -1));
+
+        jLabel4.setText("Fecha :");
+        jPanel8.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, -1, -1));
+
+        jLabel8.setText("Tipo de Reclamo :");
+        jPanel8.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
+
+        jLabel10.setText("Descripción :");
+        jPanel8.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
+        jPanel8.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 280, 140));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel8.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 210, -1));
+        jPanel8.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 210, -1));
+
+        jButton1.setBackground(new java.awt.Color(0, 102, 102));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Guardar");
+        jPanel8.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, -1, -1));
+
+        jLabel17.setText("Código de reclamo :");
+        jPanel8.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+        jPanel8.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 210, -1));
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Código", "Cliente", "Fecha", "Tipo de reclamo", "Descripción"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        jPanel8.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, -1, -1));
+
         Panel_Reclamos.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1400, 800));
 
         jPanel1.add(Panel_Reclamos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 1400, 600));
@@ -329,34 +334,57 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("HORARIOS");
-        jPanel9.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, 660, 40));
+        jPanel9.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, 1400, 40));
 
-        Panel_Horarios.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 60));
+        Panel_Horarios.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1450, 60));
 
         jPanel10.setBackground(new java.awt.Color(255, 252, 242));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Panel_Horarios.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 680, 450));
 
-        jPanel1.add(Panel_Horarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 650, 480));
+        jLabel18.setText("Empleado :");
+        jPanel10.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, -1, -1));
 
-        Panel_Usuarios.setFocusCycleRoot(true);
-        Panel_Usuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel10.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 120, -1));
 
-        jPanel11.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel10.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 120, -1));
+        jPanel10.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 120, -1));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("USUARIOS");
-        jPanel11.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, 600, 40));
+        jLabel19.setText("Fecha :");
+        jPanel10.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, -1, -1));
 
-        Panel_Usuarios.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 60));
+        jLabel20.setText("Turno :");
+        jPanel10.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 70, -1));
 
-        jPanel12.setBackground(new java.awt.Color(255, 252, 242));
-        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Panel_Usuarios.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1400, 600));
+        jButton3.setBackground(new java.awt.Color(0, 102, 102));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Asignar");
+        jPanel10.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, -1, -1));
 
-        jPanel1.add(Panel_Usuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 1400, 600));
+        jLabel21.setText("Código del Turno :");
+        jPanel10.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
+        jPanel10.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 120, -1));
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Empleado", "Fecha", "Turno", "Código"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
+
+        jPanel10.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, -1, -1));
+
+        Panel_Horarios.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1400, 800));
+
+        jPanel1.add(Panel_Horarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 1400, 800));
 
         Panel_Menu.setFocusCycleRoot(true);
         Panel_Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -366,32 +394,45 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("MENÚ");
+        jLabel9.setText("REPORTE DE VENTAS");
         jPanel13.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, 660, 40));
 
-        Panel_Menu.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 60));
+        Panel_Menu.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1450, 60));
 
         jPanel14.setBackground(new java.awt.Color(255, 252, 242));
         jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Panel_Menu.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 680, 450));
 
-        jPanel1.add(Panel_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 650, 480));
+        jLabel11.setText("Fecha :");
+        jPanel14.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
+        jPanel14.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 160, -1));
 
-        Panel_Clientes.setFocusCycleRoot(true);
-        Panel_Clientes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel14.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 160, -1));
 
-        jPanel15.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel12.setText("Producto :");
+        jPanel14.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("CLIENTES");
-        jPanel15.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, 660, 40));
+        jLabel13.setText("Cliente :");
+        jPanel14.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
+        jPanel14.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 160, -1));
 
-        Panel_Clientes.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 60));
+        jLabel14.setText("Empleado :");
+        jPanel14.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
 
-        jPanel16.setBackground(new java.awt.Color(255, 252, 242));
-        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel15.setText("Monto :");
+        jPanel14.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, -1, -1));
+        jPanel14.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 160, -1));
+        jPanel14.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 160, -1));
+
+        jButton2.setBackground(new java.awt.Color(0, 102, 102));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Generar");
+        jPanel14.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, -1, -1));
+
+        jLabel16.setText("Código de venta :");
+        jPanel14.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, -1));
+        jPanel14.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 160, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -401,68 +442,21 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Nombre", "Apellido", "Telefono", "Dirección", "Género", "Fec_Nac"
+                "Fecha", "Producto", "Cliente", "Empleado", "Monto", "Código"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel16.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 380, 230));
+        jPanel14.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 590, -1));
 
-        jLabel3.setText("Nombre:");
-        jPanel16.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, -1, -1));
-        jPanel16.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, 120, -1));
+        Panel_Menu.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1400, 800));
 
-        jLabel11.setText("Apellido:");
-        jPanel16.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, -1, -1));
-        jPanel16.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 120, -1));
+        jPanel1.add(Panel_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 1400, 800));
 
-        jLabel12.setText("Telefono:");
-        jPanel16.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, -1, -1));
-        jPanel16.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 120, -1));
-
-        jLabel13.setText("Dirección:");
-        jPanel16.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 210, -1, -1));
-        jPanel16.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 120, -1));
-
-        jLabel14.setText("Género:");
-        jPanel16.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, -1, -1));
-
-        jRadioButton1.setText("Femenino");
-        jPanel16.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, -1, -1));
-
-        jRadioButton2.setText("Masculino");
-        jPanel16.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 270, -1, -1));
-
-        jLabel15.setText("Fec_Nac:");
-        jPanel16.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, -1, -1));
-        jPanel16.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 330, 130, -1));
-
-        jButton1.setText("Registrar");
-        jPanel16.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
-
-        jButton2.setText("Modificar");
-        jPanel16.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
-
-        jButton3.setText("Limpiar");
-        jPanel16.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
-
-        jButton4.setText("Eliminar");
-        jPanel16.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, -1, -1));
-
-        Panel_Clientes.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1400, 600));
-
-        jPanel1.add(Panel_Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 1400, 480));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 520));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 800));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn_InventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InventarioActionPerformed
-        BotonPresionado(btn_Inventario,new Color(243,247,237), isPressed, 1);
-        activarUno(isPressed,1);
-        System.out.println("Boton Inventario presionado");
-    }//GEN-LAST:event_btn_InventarioActionPerformed
 
     private void btn_OrdenesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_OrdenesActionPerformed
         BotonPresionado(btn_Ordenes,new Color(243,247,237), isPressed, 0);
@@ -471,35 +465,22 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_OrdenesActionPerformed
 
     private void btn_ReclamosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ReclamosActionPerformed
-        BotonPresionado(btn_Reclamos,new Color(243,247,237), isPressed, 2);
-        activarUno(isPressed,2);
+        BotonPresionado(btn_Reclamos,new Color(243,247,237), isPressed, 1);
+        activarUno(isPressed,1);
         System.out.println("Boton Reclamos presionado");
     }//GEN-LAST:event_btn_ReclamosActionPerformed
 
     private void btn_HorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_HorariosActionPerformed
-        BotonPresionado(btn_Horarios,new Color(243,247,237), isPressed, 3);
-        activarUno(isPressed,3);
+        BotonPresionado(btn_Horarios,new Color(243,247,237), isPressed, 2);
+        activarUno(isPressed,2);
         System.out.println("Boton Horarios presionado");
     }//GEN-LAST:event_btn_HorariosActionPerformed
 
-    private void btn_UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_UsuariosActionPerformed
-        BotonPresionado(btn_Usuarios,new Color(243,247,237), isPressed, 4);
-        activarUno(isPressed,4);
-        System.out.println("Boton Usuarios presionado");
-
-    }//GEN-LAST:event_btn_UsuariosActionPerformed
-
     private void btn_MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MenuActionPerformed
-        BotonPresionado(btn_Menu,new Color(243,247,237), isPressed, 5);
-        activarUno(isPressed,5);
+        BotonPresionado(btn_Menu,new Color(243,247,237), isPressed, 3);
+        activarUno(isPressed,3);
         System.out.println("Boton Menu presionado");
     }//GEN-LAST:event_btn_MenuActionPerformed
-
-    private void btn_ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ClientesActionPerformed
-        BotonPresionado(btn_Clientes,new Color(243,247,237), isPressed, 6);
-        activarUno(isPressed,6);
-        System.out.println("Boton Clientes presionado");
-    }//GEN-LAST:event_btn_ClientesActionPerformed
 
     private void btn_CerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CerrarActionPerformed
         this.dispose();
@@ -513,21 +494,18 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
     public void activarUno(boolean[] estados, int indiceActivo){
         JButton[] botones = {
             btn_Ordenes,
-            btn_Inventario,
+         
             btn_Reclamos,
             btn_Horarios,
-            btn_Usuarios,
+        
             btn_Menu,
-            btn_Clientes
+            
         };
         JPanel[] paneles = {
             Panel_Ordenes,
-            Panel_Inventario,
             Panel_Reclamos,
             Panel_Horarios,
-            Panel_Usuarios,
             Panel_Menu,
-            Panel_Clientes
         };
         for(int i = 0;i<estados.length;i++){
             if(i == indiceActivo){
@@ -543,25 +521,23 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Panel_Clientes;
     private javax.swing.JPanel Panel_Horarios;
-    private javax.swing.JPanel Panel_Inventario;
     private javax.swing.JPanel Panel_Menu;
     private javax.swing.JPanel Panel_Ordenes;
     private javax.swing.JPanel Panel_Reclamos;
-    private javax.swing.JPanel Panel_Usuarios;
     private javax.swing.JButton btn_Cerrar;
-    private javax.swing.JButton btn_Clientes;
     private javax.swing.JButton btn_Horarios;
-    private javax.swing.JButton btn_Inventario;
     private javax.swing.JButton btn_Menu;
     private javax.swing.JButton btn_Ordenes;
     private javax.swing.JButton btn_Reclamos;
-    private javax.swing.JButton btn_Usuarios;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -569,7 +545,16 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -579,28 +564,33 @@ public class Frm_InicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
