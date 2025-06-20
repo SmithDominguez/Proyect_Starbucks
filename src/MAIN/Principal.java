@@ -15,8 +15,9 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
    
 import FORMULARIOS.Frm_Principal;
-import FORMULARIOS.Frm_InicioSesion;
+import FORMULARIOS.Frm_Gerente;
 import FORMULARIOS.Frm_Encargado;
+import FORMULARIOS.Frm_Cajero;
 import CLASES.Usuario;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,8 +29,10 @@ import javax.swing.SwingUtilities;
 public class Principal {
     
     public static Frm_Principal pantallaPrincipal = new Frm_Principal();
-    public static Frm_InicioSesion pantallaSesion = new Frm_InicioSesion();
+    public static Frm_Gerente pantallaGerente = new Frm_Gerente();
     public static Frm_Encargado pantallaEncargado = new Frm_Encargado();
+    public static Frm_Cajero pantallaCajero = new Frm_Cajero();
+    
     public static List<Usuario> listaUsuarios = new ArrayList<>();
     
     

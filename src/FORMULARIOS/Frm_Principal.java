@@ -133,10 +133,13 @@ public class Frm_Principal extends javax.swing.JFrame {
                 accesoConcedido = true;
                 if(u.getRol().equals("Encargado")){
                     Principal.pantallaEncargado.setVisible(true);
-                }else if(u.getRol().equals("Gerente")){
-                    Principal.pantallaSesion.setVisible(true);
-                }else if(u.getRol().equals("Cajero")){
                     
+                }else if(u.getRol().equals("Gerente")){
+                    Principal.pantallaGerente.setVisible(true);
+                    
+                }else if(u.getRol().equals("Cajero")){
+                    Principal.pantallaCajero.setVisible(true);
+ 
                 }else if(u.getRol().equals("Supervisor")){
                     
                 }

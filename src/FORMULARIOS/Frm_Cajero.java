@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package FORMULARIOS;
-
+import MAIN.Principal;
 /**
  *
  * @author sofia
@@ -244,7 +244,8 @@ public class Frm_Cajero extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        this.dispose();
+        this.setVisible(false);
+        Principal.pantallaPrincipal.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

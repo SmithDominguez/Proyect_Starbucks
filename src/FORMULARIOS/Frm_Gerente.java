@@ -12,12 +12,12 @@ import MAIN.Principal;
  *
  * @author nobody
  */
-public class Frm_InicioSesion extends javax.swing.JFrame {
+public class Frm_Gerente extends javax.swing.JFrame {
     
     /**
      * Creates new form INICIO_SESION_GERENTE
      */
-    public Frm_InicioSesion() {
+    public Frm_Gerente() {
         initComponents();
         this.setLocationRelativeTo(this);
         JButton[] botones = {
