@@ -6,6 +6,8 @@ package FORMULARIOS;
 
 import java.awt.Color;
 import MAIN.Principal;
+import CLASES.Usuario;
+import javax.swing.JOptionPane;
 /**
  *
  * @author nobody
@@ -120,8 +122,31 @@ public class Frm_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_ContrasenaMousePressed
 
     private void btn_IniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_IniciarActionPerformed
-        Principal.pantallaSesion.setVisible(true);
-        this.setVisible(false);
+        String correoIngresado = txt_Correo.getText();  
+        String contrasenaIngresada = txt_Contrasena.getText();
+        
+        boolean accesoConcedido = false;
+        
+        for (Usuario u : Principal.listaUsuarios){
+            if(u.getCorreo().equals(correoIngresado) && u.getContrasena().equals(contrasenaIngresada)){
+                System.out.print("Encontrado");
+                accesoConcedido = true;
+                if(u.getRol().equals("Encargado")){
+                    Principal.pantallaEncargado.setVisible(true);
+                }else if(u.getRol().equals("Gerente")){
+                    Principal.pantallaSesion.setVisible(true);
+                }else if(u.getRol().equals("Cajero")){
+                    
+                }else if(u.getRol().equals("Supervisor")){
+                    
+                }
+                this.setVisible(false);
+            }
+        }
+        System.out.print("No encontrado");
+        if(!accesoConcedido){
+            JOptionPane.showMessageDialog(this,"Correo o contraseña incorrecta");
+        }
     }//GEN-LAST:event_btn_IniciarActionPerformed
   
     
