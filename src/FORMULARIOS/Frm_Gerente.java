@@ -131,7 +131,9 @@ public class Frm_Gerente extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_Cerrar.setForeground(new java.awt.Color(30, 57, 50));
+        btn_Cerrar.setBackground(new java.awt.Color(0, 102, 102));
+        btn_Cerrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_Cerrar.setForeground(new java.awt.Color(255, 255, 255));
         btn_Cerrar.setText("Cerrar Sesión");
         btn_Cerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -252,6 +254,9 @@ public class Frm_Gerente extends javax.swing.JFrame {
         jPanel6.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, -1));
         jPanel6.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 190, 160));
 
+        jButton4.setBackground(new java.awt.Color(0, 102, 102));
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Enviar");
         jPanel6.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, -1, -1));
 

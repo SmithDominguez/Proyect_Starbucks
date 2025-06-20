@@ -39,7 +39,6 @@ public class Frm_Cajero extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
@@ -47,6 +46,11 @@ public class Frm_Cajero extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jTextField11 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         Enviar_Comprobantes = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -69,6 +73,7 @@ public class Frm_Cajero extends javax.swing.JFrame {
         jTextField10 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jButton8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -102,6 +107,9 @@ public class Frm_Cajero extends javax.swing.JFrame {
         jButton2.setBorder(null);
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 150, -1));
 
+        jButton3.setBackground(new java.awt.Color(0, 102, 102));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Cerrar Sesión");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,24 +134,21 @@ public class Frm_Cajero extends javax.swing.JFrame {
         Panel_Pedidos.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 50));
 
         jLabel5.setText("Cliente :");
-        Panel_Pedidos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
+        Panel_Pedidos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
         Panel_Pedidos.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 140, -1));
 
         jLabel6.setText("Producto :");
-        Panel_Pedidos.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Panel_Pedidos.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 140, -1));
+        Panel_Pedidos.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
 
         jLabel7.setText("Monto :");
-        Panel_Pedidos.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
-        Panel_Pedidos.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 140, -1));
+        Panel_Pedidos.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, -1, -1));
+        Panel_Pedidos.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 140, -1));
 
         jButton4.setBackground(new java.awt.Color(0, 102, 102));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Registrar");
-        Panel_Pedidos.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, -1, -1));
+        Panel_Pedidos.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -161,8 +166,27 @@ public class Frm_Cajero extends javax.swing.JFrame {
         Panel_Pedidos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 340, 260));
 
         jLabel8.setText("Código de compra :");
-        Panel_Pedidos.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
-        Panel_Pedidos.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 140, -1));
+        Panel_Pedidos.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
+        Panel_Pedidos.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 140, -1));
+
+        jButton6.setBackground(new java.awt.Color(0, 102, 102));
+        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("Buscar cliente");
+        Panel_Pedidos.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, -1, -1));
+
+        jButton7.setBackground(new java.awt.Color(0, 102, 102));
+        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setText("Buscar producto");
+        Panel_Pedidos.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 370, -1, -1));
+        Panel_Pedidos.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 140, -1));
+
+        jLabel17.setText("Tipo de Pago :");
+        Panel_Pedidos.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Panel_Pedidos.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 140, -1));
 
         jPanel1.add(Panel_Pedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 740, 420));
         Panel_Pedidos.getAccessibleContext().setAccessibleDescription("");
@@ -235,6 +259,12 @@ public class Frm_Cajero extends javax.swing.JFrame {
 
         Enviar_Comprobantes.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 720, 340));
 
+        jButton8.setBackground(new java.awt.Color(0, 102, 102));
+        jButton8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setText("Enviar comprobante");
+        Enviar_Comprobantes.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 460, -1, -1));
+
         jPanel1.add(Enviar_Comprobantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 600, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 460));
@@ -292,6 +322,9 @@ public class Frm_Cajero extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
@@ -302,6 +335,7 @@ public class Frm_Cajero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -320,6 +354,7 @@ public class Frm_Cajero extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
