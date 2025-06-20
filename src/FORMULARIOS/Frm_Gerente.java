@@ -8,18 +8,26 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import MAIN.Principal;
+import CLASES.Reclamo;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author nobody
  */
 public class Frm_Gerente extends javax.swing.JFrame {
-    
+    DefaultTableModel modeloTabla;
     /**
      * Creates new form INICIO_SESION_GERENTE
      */
     public Frm_Gerente() {
         initComponents();
         this.setLocationRelativeTo(this);
+        modeloTabla = (DefaultTableModel) tabla_reclamos.getModel();
+        Reclamo prueba = new Reclamo("R001", "Juan Pérez", "2025-06-20", "Producto en mal estado", "El café llegó derramado y con la tapa rota.");
+        Principal.listaReclamos.add(prueba);
+        
+        cargarReclamos();
         JButton[] botones = {
             btn_Ordenes,
           
@@ -73,18 +81,18 @@ public class Frm_Gerente extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtCliente = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField3 = new javax.swing.JTextField();
+        txtDescripcion = new javax.swing.JTextField();
+        comboTipo = new javax.swing.JComboBox<>();
+        txtFecha = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        txtCodigo = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tabla_reclamos = new javax.swing.JTable();
         Panel_Horarios = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -283,7 +291,7 @@ public class Frm_Gerente extends javax.swing.JFrame {
 
         jLabel3.setText("Cliente :");
         jPanel8.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, -1, -1));
-        jPanel8.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 210, -1));
+        jPanel8.add(txtCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 210, -1));
 
         jLabel4.setText("Fecha :");
         jPanel8.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, -1, -1));
@@ -293,11 +301,11 @@ public class Frm_Gerente extends javax.swing.JFrame {
 
         jLabel10.setText("Descripción :");
         jPanel8.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
-        jPanel8.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 280, 140));
+        jPanel8.add(txtDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 280, 140));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel8.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 210, -1));
-        jPanel8.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 210, -1));
+        comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel8.add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 210, -1));
+        jPanel8.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 210, -1));
 
         jButton1.setBackground(new java.awt.Color(0, 102, 102));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -307,20 +315,17 @@ public class Frm_Gerente extends javax.swing.JFrame {
 
         jLabel17.setText("Código de reclamo :");
         jPanel8.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
-        jPanel8.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 210, -1));
+        jPanel8.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 210, -1));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_reclamos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
                 "Código", "Cliente", "Fecha", "Tipo de reclamo", "Descripción"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tabla_reclamos);
 
         jPanel8.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, -1, -1));
 
@@ -473,7 +478,45 @@ public class Frm_Gerente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void cargarReclamos(){
+        modeloTabla.setRowCount(0);
+        
+        for(Reclamo r : Principal.listaReclamos){
+            modeloTabla.addRow(new Object[]{
+                r.getCodigo(),
+                r.getCliente(),
+                r.getFecha(),
+                r.getTipo(),
+                r.getDescripcion()
+            });
+        }
+    } 
+    private void registrarReclamo(){
+        String codigo = txtCodigo.getText();
+        String cliente = txtCliente.getText();
+        String fecha = txtFecha.getText();
+        String tipo = comboTipo.getSelectedItem().toString();
+        String descripcion = txtDescripcion.getText();
+        
+        if(codigo.isEmpty() || cliente.isEmpty() || fecha.isEmpty() || descripcion.isEmpty()){
+            JOptionPane.showMessageDialog(this,"Todos los campos son obligatorios");
+            return;
+        }
+        
+        Reclamo nuevo = new Reclamo(codigo,cliente,fecha,tipo,descripcion);
+        Principal.listaReclamos.add(nuevo);
+        System.out.println("Registrado correctamente");
+        cargarReclamos();
+        limpiarCampos();
+    }
+    private void limpiarCampos(){
+        txtCodigo.setText("");
+        txtCliente.setText("");
+        txtFecha.setText("");
+        comboTipo.setSelectedIndex(0);
+        txtDescripcion.setText("");
+        
+    }
     private void btn_OrdenesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_OrdenesActionPerformed
         BotonPresionado(btn_Ordenes,new Color(243,247,237), isPressed, 0);
         activarUno(isPressed,0);
@@ -502,6 +545,10 @@ public class Frm_Gerente extends javax.swing.JFrame {
         this.dispose();
         Principal.pantallaPrincipal.setVisible(true);
     }//GEN-LAST:event_btn_CerrarActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        registrarReclamo();
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     public void BotonPresionado(JButton boton, Color color, boolean[] isPressed, int array){
         isPressed[array] = true;
@@ -546,6 +593,7 @@ public class Frm_Gerente extends javax.swing.JFrame {
     private javax.swing.JButton btn_Menu;
     private javax.swing.JButton btn_Ordenes;
     private javax.swing.JButton btn_Reclamos;
+    private javax.swing.JComboBox<String> comboTipo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -553,7 +601,6 @@ public class Frm_Gerente extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton8;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
@@ -595,19 +642,19 @@ public class Frm_Gerente extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTable tabla_reclamos;
+    private javax.swing.JTextField txtCliente;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtDescripcion;
+    private javax.swing.JTextField txtFecha;
     // End of variables declaration//GEN-END:variables
 }
