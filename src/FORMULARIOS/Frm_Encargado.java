@@ -44,6 +44,12 @@ public class Frm_Encargado extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jLabel7 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -109,37 +115,88 @@ public class Frm_Encargado extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 300, 240));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, 300, 150));
         jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 130, -1));
 
         jButton3.setBackground(new java.awt.Color(0, 102, 102));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Buscar producto");
-        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
+        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, -1));
 
         jButton4.setBackground(new java.awt.Color(0, 102, 102));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Registrar");
-        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, -1, -1));
+        jButton4.setText("Eliminar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 120, -1));
 
         jButton5.setBackground(new java.awt.Color(0, 102, 102));
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Generar Solicitud de Compra");
-        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
+        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, -1));
 
         jLabel5.setText("Codigo :");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, -1));
         jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 130, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 670, 430));
+        jLabel6.setText("Solicitud de Compra");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 470));
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Código", "Producto"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, 300, 150));
+
+        jLabel7.setText("Productos Stock");
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, -1, -1));
+
+        jButton6.setBackground(new java.awt.Color(0, 102, 102));
+        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("Registrar");
+        jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 120, -1));
+
+        jButton7.setBackground(new java.awt.Color(0, 102, 102));
+        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setText("Editar");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 120, -1));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 730, 430));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,17 +239,23 @@ public class Frm_Encargado extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
