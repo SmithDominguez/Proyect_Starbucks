@@ -3,12 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/smitc/OneDrive/Documentos/Modelamiento%20y%20Analisis%20de%20Software/Proyect_Starbucks/src/FORMULARIOS/Frm_Gerente.java</file>
             <file>file:/C:/Users/smitc/OneDrive/Documentos/Modelamiento%20y%20Analisis%20de%20Software/Proyect_Starbucks/src/FORMULARIOS/Frm_Cajero.java</file>
             <file>file:/C:/Users/smitc/OneDrive/Documentos/Modelamiento%20y%20Analisis%20de%20Software/Proyect_Starbucks/src/MAIN/Principal.java</file>
             <file>file:/C:/Users/smitc/OneDrive/Documentos/Modelamiento%20y%20Analisis%20de%20Software/Proyect_Starbucks/src/FORMULARIOS/Frm_Principal.java</file>
             <file>file:/C:/Users/smitc/OneDrive/Documentos/Modelamiento%20y%20Analisis%20de%20Software/Proyect_Starbucks/src/CLASES/Usuario.java</file>
             <file>file:/C:/Users/smitc/OneDrive/Documentos/Modelamiento%20y%20Analisis%20de%20Software/Proyect_Starbucks/src/FORMULARIOS/Frm_Encargado.java</file>
+=======
+            <file>file:/C:/Users/sofia/OneDrive/Desktop/SOFIA/PROYECTOS%20EXTRA/Proyect_Starbucks/src/FORMULARIOS/Frm_Encargado.java</file>
+            <file>file:/C:/Users/sofia/OneDrive/Desktop/SOFIA/PROYECTOS%20EXTRA/Proyect_Starbucks/src/FORMULARIOS/Frm_Supervisor.java</file>
+            <file>file:/C:/Users/sofia/OneDrive/Desktop/SOFIA/PROYECTOS%20EXTRA/Proyect_Starbucks/src/MAIN/Principal.java</file>
+            <file>file:/C:/Users/sofia/OneDrive/Desktop/SOFIA/PROYECTOS%20EXTRA/Proyect_Starbucks/src/FORMULARIOS/Frm_Principal.java</file>
+            <file>file:/C:/Users/sofia/OneDrive/Desktop/SOFIA/PROYECTOS%20EXTRA/Proyect_Starbucks/src/FORMULARIOS/Frm_Cajero.java</file>
+            <file>file:/C:/Users/sofia/OneDrive/Desktop/SOFIA/PROYECTOS%20EXTRA/Proyect_Starbucks/src/FORMULARIOS/Frm_Gerente.java</file>
+>>>>>>> 071a3b14831b64bc199aadc5064937c0c388e995
         </group>
     </open-files>
 </project-private>

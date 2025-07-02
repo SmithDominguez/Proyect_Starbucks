@@ -53,6 +53,7 @@ public class Frm_Cajero extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
         jTextField12 = new javax.swing.JTextField();
+        jButton11 = new javax.swing.JButton();
         Enviar_Comprobantes = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -75,7 +76,6 @@ public class Frm_Cajero extends javax.swing.JFrame {
         jTextField10 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jButton8 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
 
@@ -138,14 +138,14 @@ public class Frm_Cajero extends javax.swing.JFrame {
         Panel_Pedidos.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 50));
 
         jLabel5.setText("Cliente :");
-        Panel_Pedidos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 60, -1));
+        Panel_Pedidos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 60, -1));
         Panel_Pedidos.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 140, -1));
 
         jLabel6.setText("Producto :");
-        Panel_Pedidos.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 70, -1));
+        Panel_Pedidos.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 70, -1));
 
-        jLabel7.setText("Precio :");
-        Panel_Pedidos.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 190, 70, -1));
+        jLabel7.setText("Total :");
+        Panel_Pedidos.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 70, -1));
 
         jButton4.setBackground(new java.awt.Color(0, 102, 102));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -160,13 +160,13 @@ public class Frm_Cajero extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Producto"
+                "Producto", "Precio"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -181,7 +181,7 @@ public class Frm_Cajero extends javax.swing.JFrame {
         Panel_Pedidos.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 140, -1));
 
         jLabel17.setText("Tipo de Pago :");
-        Panel_Pedidos.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 70, -1));
+        Panel_Pedidos.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 80, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         Panel_Pedidos.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 140, -1));
@@ -190,7 +190,7 @@ public class Frm_Cajero extends javax.swing.JFrame {
         jButton9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setText("Buscar cliente");
-        Panel_Pedidos.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 420, -1, -1));
+        Panel_Pedidos.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -215,13 +215,19 @@ public class Frm_Cajero extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "DNI", "Producto"
+                "DNI", "Cliente"
             }
         ));
         jScrollPane4.setViewportView(jTable4);
 
         Panel_Pedidos.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 270, 150));
         Panel_Pedidos.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 140, -1));
+
+        jButton11.setBackground(new java.awt.Color(0, 102, 102));
+        jButton11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(255, 255, 255));
+        jButton11.setText("Registrar cliente");
+        Panel_Pedidos.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, -1, -1));
 
         jPanel1.add(Panel_Pedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 740, 450));
         Panel_Pedidos.getAccessibleContext().setAccessibleDescription("");
@@ -294,17 +300,6 @@ public class Frm_Cajero extends javax.swing.JFrame {
 
         Enviar_Comprobantes.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 720, 340));
 
-        jButton8.setBackground(new java.awt.Color(0, 102, 102));
-        jButton8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("Reenviar comprobante");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-        Enviar_Comprobantes.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 450, 160, -1));
-
         jButton10.setBackground(new java.awt.Color(0, 102, 102));
         jButton10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton10.setForeground(new java.awt.Color(255, 255, 255));
@@ -333,10 +328,6 @@ public class Frm_Cajero extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -379,13 +370,13 @@ public class Frm_Cajero extends javax.swing.JFrame {
     private javax.swing.JPanel Panel_Pedidos;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
