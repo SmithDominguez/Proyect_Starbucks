@@ -856,8 +856,6 @@
             </Container>
           </SubComponents>
         </Container>
-<<<<<<< HEAD
-=======
         <Container class="javax.swing.JPanel" name="Panel_ReporteVenta">
           <Properties>
             <Property name="focusCycleRoot" type="boolean" value="true"/>
@@ -1153,7 +1151,6 @@
             </Container>
           </SubComponents>
         </Container>
->>>>>>> 071a3b14831b64bc199aadc5064937c0c388e995
         <Container class="javax.swing.JPanel" name="Panel_Reportes">
           <Properties>
             <Property name="focusCycleRoot" type="boolean" value="true"/>

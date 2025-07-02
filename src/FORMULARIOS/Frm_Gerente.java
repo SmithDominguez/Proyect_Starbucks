@@ -106,7 +106,6 @@ public class Frm_Gerente extends javax.swing.JFrame {
         jScrollPane8 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
         jTextField2 = new javax.swing.JTextField();
-
         Panel_ReporteVenta = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -126,7 +125,6 @@ public class Frm_Gerente extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jComboBox5 = new javax.swing.JComboBox<>();
->>>>>>> 071a3b14831b64bc199aadc5064937c0c388e995
         Panel_Reportes = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
@@ -435,7 +433,6 @@ public class Frm_Gerente extends javax.swing.JFrame {
 
         jPanel1.add(Panel_Horarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 1400, 800));
 
-
         Panel_ReporteVenta.setFocusCycleRoot(true);
         Panel_ReporteVenta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -512,7 +509,6 @@ public class Frm_Gerente extends javax.swing.JFrame {
         Panel_ReporteVenta.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1400, 800));
 
         jPanel1.add(Panel_ReporteVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 1400, 800));
-
 
         Panel_Reportes.setFocusCycleRoot(true);
         Panel_Reportes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -737,8 +733,6 @@ public class Frm_Gerente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Panel_Horarios;
-
-    private javax.swing.JPanel Panel_Ordenes;
     private javax.swing.JPanel Panel_Reclamos;
     private javax.swing.JPanel Panel_ReporteVenta;
     private javax.swing.JPanel Panel_Reportes;
@@ -754,22 +748,23 @@ public class Frm_Gerente extends javax.swing.JFrame {
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    
+    private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
-
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -790,19 +785,18 @@ public class Frm_Gerente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-
-    private javax.swing.JLabel jLabel8;
-
     private javax.swing.JLabel jLabel9;
-
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -810,10 +804,14 @@ public class Frm_Gerente extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     private javax.swing.JTable tabla_reclamos;
     private javax.swing.JTable tabla_reclamos1;
     private javax.swing.JTable tabla_reclamos2;
