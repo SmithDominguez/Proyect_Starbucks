@@ -90,8 +90,18 @@ public class Frm_Gerente extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabla_reclamos = new javax.swing.JTable();
-        jButton7 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tabla_reclamos4 = new javax.swing.JTable();
+        jButton13 = new javax.swing.JButton();
+        txtCliente7 = new javax.swing.JTextField();
+        jButton14 = new javax.swing.JButton();
+        txtCliente8 = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        txtCliente9 = new javax.swing.JTextField();
+        txtCliente10 = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        txtCliente11 = new javax.swing.JTextField();
+        jButton15 = new javax.swing.JButton();
         Panel_Horarios = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -104,8 +114,10 @@ public class Frm_Gerente extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
         jButton8 = new javax.swing.JButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jTextField2 = new javax.swing.JTextField();
         Panel_Menu = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -125,6 +137,32 @@ public class Frm_Gerente extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jComboBox5 = new javax.swing.JComboBox<>();
+        Panel_Reportes = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        txtCliente1 = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tabla_reclamos1 = new javax.swing.JTable();
+        jButton10 = new javax.swing.JButton();
+        txtCliente2 = new javax.swing.JTextField();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tabla_reclamos2 = new javax.swing.JTable();
+        txtCliente3 = new javax.swing.JTextField();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tabla_reclamos3 = new javax.swing.JTable();
+        txtCliente4 = new javax.swing.JTextField();
+        txtCliente5 = new javax.swing.JTextField();
+        jButton11 = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
+        txtCliente6 = new javax.swing.JTextField();
+        jButton12 = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INICIO_SESION_GERENTE");
@@ -288,13 +326,13 @@ public class Frm_Gerente extends javax.swing.JFrame {
 
         jLabel3.setText("Cliente :");
         jPanel8.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, -1, -1));
-        jPanel8.add(txtCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 210, -1));
+        jPanel8.add(txtCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 470, 210, -1));
 
         jLabel4.setText("Fecha :");
         jPanel8.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, -1, -1));
 
         jLabel8.setText("Tipo de Reclamo :");
-        jPanel8.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+        jPanel8.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
 
         jLabel10.setText("Observación :");
         jPanel8.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, -1, -1));
@@ -306,8 +344,8 @@ public class Frm_Gerente extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 102, 102));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Guardar");
-        jPanel8.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, -1, -1));
+        jButton1.setText("Registrar Tipo Reclamo");
+        jPanel8.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, -1, -1));
 
         tabla_reclamos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -318,17 +356,52 @@ public class Frm_Gerente extends javax.swing.JFrame {
             }
         ));
         jScrollPane2.setViewportView(tabla_reclamos);
+        if (tabla_reclamos.getColumnModel().getColumnCount() > 0) {
+            tabla_reclamos.getColumnModel().getColumn(4).setHeaderValue("Descripción");
+        }
 
-        jPanel8.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, -1, 350));
+        jPanel8.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 30, -1, 200));
 
-        jButton7.setBackground(new java.awt.Color(0, 102, 102));
-        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Buscar cliente");
-        jPanel8.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 420, -1, -1));
+        tabla_reclamos4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null}
+            },
+            new String [] {
+                "DNI", "Cliente"
+            }
+        ));
+        jScrollPane7.setViewportView(tabla_reclamos4);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel8.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 210, -1));
+        jPanel8.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 310, 330, 120));
+
+        jButton13.setBackground(new java.awt.Color(0, 102, 102));
+        jButton13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton13.setForeground(new java.awt.Color(255, 255, 255));
+        jButton13.setText("Registrar Cliente");
+        jPanel8.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 500, 150, -1));
+        jPanel8.add(txtCliente7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 210, -1));
+
+        jButton14.setBackground(new java.awt.Color(0, 102, 102));
+        jButton14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton14.setForeground(new java.awt.Color(255, 255, 255));
+        jButton14.setText("Buscar cliente");
+        jPanel8.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, 110, -1));
+        jPanel8.add(txtCliente8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 440, 210, -1));
+
+        jLabel28.setText("Cliente :");
+        jPanel8.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, -1, -1));
+        jPanel8.add(txtCliente9, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, 210, -1));
+        jPanel8.add(txtCliente10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 210, -1));
+
+        jLabel29.setText("Tipo de Reclamo :");
+        jPanel8.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+        jPanel8.add(txtCliente11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 210, -1));
+
+        jButton15.setBackground(new java.awt.Color(0, 102, 102));
+        jButton15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton15.setForeground(new java.awt.Color(255, 255, 255));
+        jButton15.setText("Registrar Reclamo");
+        jPanel8.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 370, -1, -1));
 
         Panel_Reclamos.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1400, 800));
 
@@ -351,25 +424,46 @@ public class Frm_Gerente extends javax.swing.JFrame {
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel18.setText("Empleado :");
-        jPanel10.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, -1, -1));
+        jPanel10.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel10.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 120, -1));
-        jPanel10.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 120, -1));
+        jPanel10.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 120, -1));
+        jPanel10.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 120, -1));
 
         jLabel19.setText("Fecha :");
-        jPanel10.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, -1, -1));
+        jPanel10.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
 
         jLabel20.setText("Turno :");
-        jPanel10.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 70, -1));
+        jPanel10.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 70, -1));
 
         jButton3.setBackground(new java.awt.Color(0, 102, 102));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Asignar");
-        jPanel10.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, -1));
+        jPanel10.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, -1));
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "DNI", "Empleado"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
+
+        jPanel10.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 390, 150));
+
+        jButton8.setBackground(new java.awt.Color(0, 102, 102));
+        jButton8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setText("Buscar empleado");
+        jPanel10.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -380,16 +474,13 @@ public class Frm_Gerente extends javax.swing.JFrame {
                 "Empleado", "Fecha", "Turno"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane8.setViewportView(jTable4);
+        if (jTable4.getColumnModel().getColumnCount() > 0) {
+            jTable4.getColumnModel().getColumn(2).setHeaderValue("Turno");
+        }
 
-        jPanel10.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, -1, 260));
-        jPanel10.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 120, -1));
-
-        jButton8.setBackground(new java.awt.Color(0, 102, 102));
-        jButton8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("Buscar empleado");
-        jPanel10.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 330, -1, -1));
+        jPanel10.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, -1, 260));
+        jPanel10.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 120, -1));
 
         Panel_Horarios.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1400, 800));
 
@@ -472,6 +563,120 @@ public class Frm_Gerente extends javax.swing.JFrame {
 
         jPanel1.add(Panel_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 1400, 800));
 
+        Panel_Reportes.setFocusCycleRoot(true);
+        Panel_Reportes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel11.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("REPORTES");
+        jPanel11.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, 1410, 40));
+
+        Panel_Reportes.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1450, 60));
+
+        jPanel12.setBackground(new java.awt.Color(255, 252, 242));
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel17.setText("Cliente :");
+        jPanel12.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, -1, -1));
+        jPanel12.add(txtCliente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 210, -1));
+
+        jLabel21.setText("Fecha :");
+        jPanel12.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, -1, -1));
+
+        jLabel25.setText("Tipo de pago");
+        jPanel12.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, -1, -1));
+
+        jButton9.setBackground(new java.awt.Color(0, 102, 102));
+        jButton9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setText("Buscar");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, -1, -1));
+
+        tabla_reclamos1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null}
+            },
+            new String [] {
+                "DNI", "Empleado"
+            }
+        ));
+        jScrollPane4.setViewportView(tabla_reclamos1);
+
+        jPanel12.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 330, 120));
+
+        jButton10.setBackground(new java.awt.Color(0, 102, 102));
+        jButton10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(255, 255, 255));
+        jButton10.setText("Buscar cliente");
+        jPanel12.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, -1, -1));
+        jPanel12.add(txtCliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 210, -1));
+
+        tabla_reclamos2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Cliente", "Fecha", "Empleado", "Productos", "Tipo Pago", "Precio"
+            }
+        ));
+        jScrollPane5.setViewportView(tabla_reclamos2);
+
+        jPanel12.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, -1, 190));
+        jPanel12.add(txtCliente3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 210, -1));
+
+        tabla_reclamos3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null}
+            },
+            new String [] {
+                "DNI", "Cliente"
+            }
+        ));
+        jScrollPane6.setViewportView(tabla_reclamos3);
+
+        jPanel12.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 350, 330, 120));
+        jPanel12.add(txtCliente4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 210, -1));
+        jPanel12.add(txtCliente5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 210, -1));
+
+        jButton11.setBackground(new java.awt.Color(0, 102, 102));
+        jButton11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(255, 255, 255));
+        jButton11.setText("Guardar");
+        jPanel12.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 490, -1, -1));
+
+        jLabel26.setText("Empleado:");
+        jPanel12.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
+        jPanel12.add(txtCliente6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 210, -1));
+
+        jButton12.setBackground(new java.awt.Color(0, 102, 102));
+        jButton12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton12.setForeground(new java.awt.Color(255, 255, 255));
+        jButton12.setText("Generar reporte");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 230, -1, -1));
+
+        jLabel27.setText("Producto");
+        jPanel12.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel12.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 210, -1));
+
+        Panel_Reportes.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1400, 800));
+
+        jPanel1.add(Panel_Reportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 1400, 600));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 800));
 
         pack();
@@ -545,6 +750,14 @@ public class Frm_Gerente extends javax.swing.JFrame {
         registrarReclamo();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton12ActionPerformed
+
     public void BotonPresionado(JButton boton, Color color, boolean[] isPressed, int array){
         isPressed[array] = true;
         boton.setBackground(color);
@@ -583,6 +796,7 @@ public class Frm_Gerente extends javax.swing.JFrame {
     private javax.swing.JPanel Panel_Menu;
     private javax.swing.JPanel Panel_Ordenes;
     private javax.swing.JPanel Panel_Reclamos;
+    private javax.swing.JPanel Panel_Reportes;
     private javax.swing.JButton btn_Cerrar;
     private javax.swing.JButton btn_Horarios;
     private javax.swing.JButton btn_Menu;
@@ -590,15 +804,21 @@ public class Frm_Gerente extends javax.swing.JFrame {
     private javax.swing.JButton btn_Reclamos;
     private javax.swing.JComboBox<String> comboTipo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JLabel jLabel1;
@@ -608,13 +828,21 @@ public class Frm_Gerente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -624,6 +852,8 @@ public class Frm_Gerente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
@@ -635,18 +865,39 @@ public class Frm_Gerente extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTable tabla_reclamos;
+    private javax.swing.JTable tabla_reclamos1;
+    private javax.swing.JTable tabla_reclamos2;
+    private javax.swing.JTable tabla_reclamos3;
+    private javax.swing.JTable tabla_reclamos4;
     private javax.swing.JTextField txtCliente;
+    private javax.swing.JTextField txtCliente1;
+    private javax.swing.JTextField txtCliente10;
+    private javax.swing.JTextField txtCliente11;
+    private javax.swing.JTextField txtCliente2;
+    private javax.swing.JTextField txtCliente3;
+    private javax.swing.JTextField txtCliente4;
+    private javax.swing.JTextField txtCliente5;
+    private javax.swing.JTextField txtCliente6;
+    private javax.swing.JTextField txtCliente7;
+    private javax.swing.JTextField txtCliente8;
+    private javax.swing.JTextField txtCliente9;
     private javax.swing.JTextField txtDescripcion;
     // End of variables declaration//GEN-END:variables
 }
