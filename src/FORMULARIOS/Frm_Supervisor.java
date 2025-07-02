@@ -48,6 +48,7 @@ public class Frm_Supervisor extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         Incidentes = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -61,7 +62,6 @@ public class Frm_Supervisor extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -176,6 +176,12 @@ public class Frm_Supervisor extends javax.swing.JFrame {
         jButton6.setText("Registrar Falta");
         jPanel5.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, -1, -1));
 
+        jButton11.setBackground(new java.awt.Color(0, 102, 102));
+        jButton11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(255, 255, 255));
+        jButton11.setText("Buscar por fecha");
+        jPanel5.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, -1, -1));
+
         Asistencia.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 620, 330));
 
         getContentPane().add(Asistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -239,12 +245,6 @@ public class Frm_Supervisor extends javax.swing.JFrame {
         jButton9.setText("Registrar Memorándum");
         jPanel7.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
 
-        jButton10.setBackground(new java.awt.Color(0, 102, 102));
-        jButton10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jButton10.setText("Verificar Sanciones");
-        jPanel7.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, 160, -1));
-
         Incidentes.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 690, 290));
 
         getContentPane().add(Incidentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -296,7 +296,7 @@ public class Frm_Supervisor extends javax.swing.JFrame {
     private javax.swing.JPanel Asistencia;
     private javax.swing.JPanel Incidentes;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
