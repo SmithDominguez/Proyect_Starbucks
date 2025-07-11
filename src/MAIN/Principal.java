@@ -5,6 +5,8 @@
 package MAIN;
 
 import CLASES.Cliente;
+import CLASES.Empleado;
+import CLASES.Horario;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,7 +23,10 @@ import FORMULARIOS.Frm_Encargado;
 import FORMULARIOS.Frm_Cajero;
 import CLASES.Usuario;
 import CLASES.Reclamo;
+import CLASES.Reporte;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.swing.SwingUtilities;
 /**
@@ -38,7 +43,10 @@ public class Principal {
     public static List<Usuario> listaUsuarios = new ArrayList<>();
     public static List<Reclamo> listaReclamos = new ArrayList<>();
     public static List<Cliente> listaClientes = new ArrayList<>();
-    
+    public static List<Empleado> listaEmpleados = new ArrayList<>();
+    public static List<Horario> listaHorarios = new ArrayList<>();
+     public static List<Reporte> listaReportes = new ArrayList<>();
+     
     public static void main(String[] args) {
         //Abrir pantalla Principal
         // Proyecto Starbucks
@@ -49,10 +57,23 @@ public class Principal {
         pantallaEncargado = new Frm_Encargado();
         pantallaCajero = new Frm_Cajero();
         
+        listaEmpleados.add(new Empleado("12345", "Alberto Doriban"));
+        listaEmpleados.add(new Empleado("54321", "Juan Granjero"));
+        
+        listaClientes.add(new Cliente("12345", "Josesito Marcino"));
+        listaClientes.add(new Cliente("54321", "Jabo Jorge"));
+        
         listaUsuarios.add(new Usuario("encargadoAlmacen@starbucks.com", "1234", "Encargado"));
         listaUsuarios.add(new Usuario("gerente@starbucks.com", "4321", "Gerente"));
         listaUsuarios.add(new Usuario("cajero@starbucks.com", "9876", "Cajero"));
         listaUsuarios.add(new Usuario("supervisor@starbucks.com", "6789", "Supervisor"));
+        
+        //Reportes de prueba
+        listaReportes.add(new Reporte("Josesito Marcino", new Date(2025,6,10), "Alberto Doriban", "Cafe", "Efectivo"));
+        listaReportes.add(new Reporte("Jabo Jorge", new Date(2025,6,8), "Alberto Doriban", "Pan", "Efectivo"));
+        listaReportes.add(new Reporte("Josesito Marcino", new Date(2025,6,9), "Juan Granjero", "Cafe", "Tarjeta"));
+        listaReportes.add(new Reporte("Josesito Marcino", new Date(2025,6,10), "Juan Granjero", "Cafe", "Efectivo"));
+        listaReportes.add(new Reporte("Jabo Jorge", new Date(2025,6,10), "Juan Granjero", "Pan", "Tarjeta"));
         
         pantallaPrincipal.setVisible(true);
         pantallaPrincipal.setSize(610, 510);

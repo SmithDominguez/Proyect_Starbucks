@@ -4,12 +4,15 @@
  */
 package FORMULARIOS;
 import CLASES.Cliente;
+import CLASES.Empleado;
+import CLASES.Horario;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import MAIN.Principal;
 import CLASES.Reclamo;
+import CLASES.Reporte;
 import java.time.LocalDate;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -21,6 +24,9 @@ import javax.swing.table.DefaultTableModel;
 public class Frm_Gerente extends javax.swing.JFrame {
     DefaultTableModel modeloTabla;
     DefaultTableModel tablaClientes;
+    DefaultTableModel tablaHorarios;
+    DefaultTableModel tablaEmpleados;
+    DefaultTableModel tablaReporte;
     /**
      * Creates new form INICIO_SESION_GERENTE
      */
@@ -28,8 +34,12 @@ public class Frm_Gerente extends javax.swing.JFrame {
     public Frm_Gerente() {
         initComponents();
         this.setLocationRelativeTo(this);
+        
         modeloTabla = (DefaultTableModel) tabla_reclamos.getModel();
         tablaClientes = (DefaultTableModel) tabla_Clientes.getModel();
+        tablaHorarios = (DefaultTableModel) tabla_Horarios.getModel();
+        tablaEmpleados = (DefaultTableModel) tabla_Empleados.getModel();
+        tablaReporte = (DefaultTableModel) tabla_Reporte.getModel();
         Date fechaEspecifica = new Date(2025,7,15);
         Reclamo prueba = new Reclamo(codigo++, "Juan Pérez", fechaEspecifica, "Producto en mal estado", "El café llegó derramado y con la tapa rota.");
         Principal.listaReclamos.add(prueba);
@@ -101,51 +111,49 @@ public class Frm_Gerente extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        txtFecha = new javax.swing.JTextField();
+        boxTurno = new javax.swing.JComboBox<>();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        btnAsignar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        jButton8 = new javax.swing.JButton();
+        tabla_Empleados = new javax.swing.JTable();
+        btnBuscarEmpleado = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
-        jTextField2 = new javax.swing.JTextField();
+        tabla_Horarios = new javax.swing.JTable();
+        txtDniEmpleado = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        DateChooseHorario = new com.toedter.calendar.JDateChooser();
+        txtEmpleadoNombre = new javax.swing.JTextField();
+        btnActualizarHorario = new javax.swing.JButton();
         Panel_Reportes = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
-        txtCliente1 = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        tabla_reclamos1 = new javax.swing.JTable();
-        jButton10 = new javax.swing.JButton();
-        txtCliente2 = new javax.swing.JTextField();
+        btnBuscarClienteReporte = new javax.swing.JButton();
+        txtClienteNombreReporte = new javax.swing.JTextField();
         jScrollPane5 = new javax.swing.JScrollPane();
-        tabla_reclamos2 = new javax.swing.JTable();
-        txtCliente3 = new javax.swing.JTextField();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        tabla_reclamos3 = new javax.swing.JTable();
-        txtCliente4 = new javax.swing.JTextField();
+        tabla_Reporte = new javax.swing.JTable();
+        txtDniClienteReporte = new javax.swing.JTextField();
+        txtNombreEmpleadoReporte = new javax.swing.JTextField();
         jButton11 = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
-        txtCliente6 = new javax.swing.JTextField();
-        jButton12 = new javax.swing.JButton();
+        txtDniEmpleadoReporte = new javax.swing.JTextField();
+        btnGenerarReporte = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        boxTipoPago = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
+        boxProducto = new javax.swing.JComboBox<>();
+        CheckTipo = new javax.swing.JCheckBox();
+        CheckFecha = new javax.swing.JCheckBox();
+        CheckCliente = new javax.swing.JCheckBox();
+        CheckEmpleado = new javax.swing.JCheckBox();
+        CheckProducto = new javax.swing.JCheckBox();
+        DateChooserReporte = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INICIO_SESION_GERENTE");
@@ -294,7 +302,7 @@ public class Frm_Gerente extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tabla_reclamos);
 
-        jPanel8.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, -1, 200));
+        jPanel8.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 650, 130));
 
         tabla_Clientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -376,7 +384,7 @@ public class Frm_Gerente extends javax.swing.JFrame {
         });
         jPanel8.add(btnRegistrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 290, 150, -1));
 
-        Panel_Reclamos.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1400, 800));
+        Panel_Reclamos.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1390, 800));
 
         jPanel1.add(Panel_Reclamos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 1400, 600));
 
@@ -399,9 +407,8 @@ public class Frm_Gerente extends javax.swing.JFrame {
         jLabel18.setText("Empleado :");
         jPanel10.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel10.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 120, -1));
-        jPanel10.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 120, -1));
+        boxTurno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mañana", "Tarde", "Noche" }));
+        jPanel10.add(boxTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 120, -1));
 
         jLabel19.setText("Fecha :");
         jPanel10.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
@@ -409,13 +416,18 @@ public class Frm_Gerente extends javax.swing.JFrame {
         jLabel20.setText("Turno :");
         jPanel10.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 70, -1));
 
-        jButton3.setBackground(new java.awt.Color(0, 102, 102));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Asignar");
-        jPanel10.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
+        btnAsignar.setBackground(new java.awt.Color(0, 102, 102));
+        btnAsignar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnAsignar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAsignar.setText("Asignar");
+        btnAsignar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAsignarActionPerformed(evt);
+            }
+        });
+        jPanel10.add(btnAsignar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_Empleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -426,17 +438,22 @@ public class Frm_Gerente extends javax.swing.JFrame {
                 "DNI", "Empleado"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(tabla_Empleados);
 
         jPanel10.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 50, 390, 150));
 
-        jButton8.setBackground(new java.awt.Color(0, 102, 102));
-        jButton8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("Buscar empleado");
-        jPanel10.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
+        btnBuscarEmpleado.setBackground(new java.awt.Color(0, 102, 102));
+        btnBuscarEmpleado.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnBuscarEmpleado.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscarEmpleado.setText("Buscar empleado");
+        btnBuscarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarEmpleadoActionPerformed(evt);
+            }
+        });
+        jPanel10.add(btnBuscarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_Horarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -447,13 +464,13 @@ public class Frm_Gerente extends javax.swing.JFrame {
                 "Empleado", "Fecha", "Turno"
             }
         ));
-        jScrollPane8.setViewportView(jTable4);
-        if (jTable4.getColumnModel().getColumnCount() > 0) {
-            jTable4.getColumnModel().getColumn(2).setHeaderValue("Turno");
+        jScrollPane8.setViewportView(tabla_Horarios);
+        if (tabla_Horarios.getColumnModel().getColumnCount() > 0) {
+            tabla_Horarios.getColumnModel().getColumn(2).setHeaderValue("Turno");
         }
 
         jPanel10.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 500, 260));
-        jPanel10.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 120, -1));
+        jPanel10.add(txtDniEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 120, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel8.setText("Horarios");
@@ -462,6 +479,22 @@ public class Frm_Gerente extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel9.setText("Empleados");
         jPanel10.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, -1, -1));
+        jPanel10.add(DateChooseHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 130, -1));
+
+        txtEmpleadoNombre.setEnabled(false);
+        jPanel10.add(txtEmpleadoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 120, -1));
+
+        btnActualizarHorario.setBackground(new java.awt.Color(0, 102, 102));
+        btnActualizarHorario.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnActualizarHorario.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizarHorario.setText("Actualizar");
+        btnActualizarHorario.setToolTipText("");
+        btnActualizarHorario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarHorarioActionPerformed(evt);
+            }
+        });
+        jPanel10.add(btnActualizarHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, -1, -1));
 
         Panel_Horarios.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1400, 800));
 
@@ -485,7 +518,6 @@ public class Frm_Gerente extends javax.swing.JFrame {
 
         jLabel17.setText("Cliente :");
         jPanel12.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
-        jPanel12.add(txtCliente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 210, -1));
 
         jLabel21.setText("Fecha :");
         jPanel12.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
@@ -493,26 +525,21 @@ public class Frm_Gerente extends javax.swing.JFrame {
         jLabel25.setText("Tipo de pago");
         jPanel12.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, -1, -1));
 
-        tabla_reclamos1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null}
-            },
-            new String [] {
-                "DNI", "Empleado"
+        btnBuscarClienteReporte.setBackground(new java.awt.Color(0, 102, 102));
+        btnBuscarClienteReporte.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnBuscarClienteReporte.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscarClienteReporte.setText("Buscar cliente");
+        btnBuscarClienteReporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarClienteReporteActionPerformed(evt);
             }
-        ));
-        jScrollPane4.setViewportView(tabla_reclamos1);
+        });
+        jPanel12.add(btnBuscarClienteReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, -1, -1));
 
-        jPanel12.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, 330, 120));
+        txtClienteNombreReporte.setEnabled(false);
+        jPanel12.add(txtClienteNombreReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 210, -1));
 
-        jButton10.setBackground(new java.awt.Color(0, 102, 102));
-        jButton10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jButton10.setText("Buscar cliente");
-        jPanel12.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, -1, -1));
-        jPanel12.add(txtCliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 210, -1));
-
-        tabla_reclamos2.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_Reporte.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null}
             },
@@ -520,50 +547,50 @@ public class Frm_Gerente extends javax.swing.JFrame {
                 "Cliente", "Fecha", "Empleado", "Productos", "Tipo Pago"
             }
         ));
-        jScrollPane5.setViewportView(tabla_reclamos2);
+        jScrollPane5.setViewportView(tabla_Reporte);
 
-        jPanel12.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, 190));
-        jPanel12.add(txtCliente3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 210, -1));
+        jPanel12.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, -1, 410));
 
-        tabla_reclamos3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null}
-            },
-            new String [] {
-                "DNI", "Cliente"
-            }
-        ));
-        jScrollPane6.setViewportView(tabla_reclamos3);
+        txtDniClienteReporte.setEnabled(false);
+        jPanel12.add(txtDniClienteReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 210, -1));
 
-        jPanel12.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 30, 330, 120));
-        jPanel12.add(txtCliente4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 210, -1));
+        txtNombreEmpleadoReporte.setEnabled(false);
+        jPanel12.add(txtNombreEmpleadoReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 210, -1));
 
         jButton11.setBackground(new java.awt.Color(0, 102, 102));
         jButton11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setText("Buscar empleado");
-        jPanel12.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, -1, -1));
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, -1, -1));
 
         jLabel26.setText("Empleado:");
         jPanel12.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
-        jPanel12.add(txtCliente6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 210, -1));
 
-        jButton12.setBackground(new java.awt.Color(0, 102, 102));
-        jButton12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton12.setForeground(new java.awt.Color(255, 255, 255));
-        jButton12.setText("Generar reporte");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        txtDniEmpleadoReporte.setEnabled(false);
+        jPanel12.add(txtDniEmpleadoReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 210, -1));
+
+        btnGenerarReporte.setBackground(new java.awt.Color(0, 102, 102));
+        btnGenerarReporte.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnGenerarReporte.setForeground(new java.awt.Color(255, 255, 255));
+        btnGenerarReporte.setText("Generar reporte");
+        btnGenerarReporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                btnGenerarReporteActionPerformed(evt);
             }
         });
-        jPanel12.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, -1, -1));
+        jPanel12.add(btnGenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, -1, -1));
 
         jLabel27.setText("Producto");
         jPanel12.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, -1, -1));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel12.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 210, -1));
+        boxTipoPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Tarjeta" }));
+        boxTipoPago.setEnabled(false);
+        jPanel12.add(boxTipoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 210, -1));
 
         jLabel5.setText("DNI del Cliente :");
         jPanel12.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, -1, -1));
@@ -571,23 +598,48 @@ public class Frm_Gerente extends javax.swing.JFrame {
         jLabel22.setText("DNI del Empleado :");
         jPanel12.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel12.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 210, -1));
+        boxProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cafe", "Pan" }));
+        boxProducto.setEnabled(false);
+        jPanel12.add(boxProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 210, -1));
 
-        jCheckBox1.setText("jCheckBox1");
-        jPanel12.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, -1, -1));
+        CheckTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckTipoActionPerformed(evt);
+            }
+        });
+        jPanel12.add(CheckTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, -1, -1));
 
-        jCheckBox2.setText("jCheckBox1");
-        jPanel12.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, -1));
+        CheckFecha.setActionCommand("");
+        CheckFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckFechaActionPerformed(evt);
+            }
+        });
+        jPanel12.add(CheckFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, -1));
 
-        jCheckBox3.setText("jCheckBox1");
-        jPanel12.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, -1, -1));
+        CheckCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckClienteActionPerformed(evt);
+            }
+        });
+        jPanel12.add(CheckCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, -1, -1));
 
-        jCheckBox4.setText("jCheckBox1");
-        jPanel12.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, -1, -1));
+        CheckEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckEmpleadoActionPerformed(evt);
+            }
+        });
+        jPanel12.add(CheckEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, -1, -1));
 
-        jCheckBox5.setText("jCheckBox1");
-        jPanel12.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, -1, -1));
+        CheckProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckProductoActionPerformed(evt);
+            }
+        });
+        jPanel12.add(CheckProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, -1, -1));
+
+        DateChooserReporte.setEnabled(false);
+        jPanel12.add(DateChooserReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 210, -1));
 
         Panel_Reportes.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1400, 800));
 
@@ -619,6 +671,27 @@ public class Frm_Gerente extends javax.swing.JFrame {
                 r.getNombreCliente(),
             });
         }
+    }
+    private void cargarEmpleados(){
+        tablaEmpleados.setRowCount(0);
+        
+        for(Empleado r : Principal.listaEmpleados){
+            tablaEmpleados.addRow(new Object[]{
+                r.getDNI(),
+                r.getNombreEmpleado(),
+            });
+        }
+    }
+    private void cargarHorarios(){
+        tablaHorarios.setRowCount(0);
+        
+        for(Horario r : Principal.listaHorarios){
+            tablaHorarios.addRow(new Object[]{
+                r.getDNIEmpleado(),
+                r.getFecha(),
+                r.getTurno(),
+            });
+        }
     } 
     private void registrarReclamo(){
         Date fecha = DateChooser.getDate();
@@ -630,7 +703,7 @@ public class Frm_Gerente extends javax.swing.JFrame {
         System.out.println("Registrado Reclamo correctamente");
         
         cargarReclamos();
-        limpiarCamposCliente();
+        limpiarCampos();
     }
     private void registrarCliente(){
         String DNI = txtDniClienteRegistrar.getText();
@@ -639,17 +712,31 @@ public class Frm_Gerente extends javax.swing.JFrame {
         Principal.listaClientes.add(new Cliente(DNI, Nombre));
         System.out.println("Registrado Cliente correctamente");
         cargarClientes();
-        limpiarCampos();
+        limpiarCamposCliente();
+    }
+    private void registrarHorario(){
+        String DNI = txtDniEmpleado.getText();
+        Date fecha = DateChooseHorario.getDate();
+        String turno = boxTurno.getSelectedItem().toString();
+        
+        Principal.listaHorarios.add(new Horario(DNI, fecha, turno));
+        System.out.println("Horario Cliente correctamente");
+        cargarHorarios();
+        limpiarCamposHorarios();
     }
     private void limpiarCampos(){
         txtDNICliente.setText("");
         txtNombreCliente.setText("");
         comboTipo.setSelectedIndex(0);
-        txtObservacion.setText("");    
+        txtObservacion.setText("");  
     }
     private void limpiarCamposCliente(){
         txtDniClienteRegistrar.setText("");
         txtNombreClienteRegistrar.setText("");   
+    }
+    private void limpiarCamposHorarios(){
+        txtDniEmpleado.setText("");
+        boxTurno.setSelectedIndex(0);
     }
     private void btn_ReclamosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ReclamosActionPerformed
         BotonPresionado(btn_Reclamos,new Color(243,247,237), isPressed, 0);
@@ -678,12 +765,63 @@ public class Frm_Gerente extends javax.swing.JFrame {
         registrarReclamo();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton12ActionPerformed
+    private void btnGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteActionPerformed
+        tablaReporte.setRowCount(0);
+        for (Reporte r : Principal.listaReportes) {
+            boolean cumpleFiltros = true;
+                if(CheckFecha.isSelected()){
+                    Date fechaSeleccionada = DateChooserReporte.getDate();
+                    if(!r.getFecha().equals(fechaSeleccionada)){
+                        cumpleFiltros = false;
+                    }
+                }
+                if(CheckCliente.isSelected()){
+                    String NombreCliente = txtClienteNombreReporte.getText();
+                    if(!r.getCliente().contains(NombreCliente)){
+                        cumpleFiltros = false;
+                    }
+                }
+                if(CheckEmpleado.isSelected()){
+                    String NombreEmpleado = txtNombreEmpleadoReporte.getText();
+                    if(!r.getEmpleado().contains(NombreEmpleado)){
+                        cumpleFiltros = false;
+                    }
+                }
+                if(CheckProducto.isSelected()){
+                    String producto = boxProducto.getSelectedItem().toString();
+                    if(!r.getProducto().contains(producto)){
+                        cumpleFiltros = false;
+                    }
+                }
+                if(CheckTipo.isSelected()){
+                    String tipo = boxTipoPago.getSelectedItem().toString();
+                    if(!r.getTipoPago().contains(tipo)){
+                        cumpleFiltros = false;
+                    }
+                }
+                if(cumpleFiltros){
+                    tablaReporte.addRow(new Object[]{
+                        r.getCliente(),
+                        r.getFecha(),
+                        r.getEmpleado(),
+                        r.getProducto(),
+                        r.getTipoPago(),
+                    });
+                }
+        }
+        if(tablaReporte.getRowCount()==0){
+            JOptionPane.showMessageDialog(null, "No se encontraro resultados.");
+        }
+                
+    }//GEN-LAST:event_btnGenerarReporteActionPerformed
 
     private void btn_RegistrarReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistrarReclamoActionPerformed
-        registrarReclamo();
+        if(txtNombreCliente.getText().equals("") && txtObservacion.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"LLENE LOS DATOS ");
+        }else{
+            registrarReclamo();
+        }
+
     }//GEN-LAST:event_btn_RegistrarReclamoActionPerformed
 
     private void btnRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarClienteActionPerformed
@@ -696,6 +834,7 @@ public class Frm_Gerente extends javax.swing.JFrame {
         for(Cliente r : Principal.listaClientes){
             if(r.getDNI().equals(dniBuscado)){
                 JOptionPane.showMessageDialog(null,"CLIENTE ENCONTRADO " + r.getDNI());
+                txtNombreCliente.setText(r.getNombreCliente());
                 encontrado = true;
                 break;
             }
@@ -705,6 +844,108 @@ public class Frm_Gerente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
+    private void btnAsignarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsignarActionPerformed
+        if(txtEmpleadoNombre.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"LLENE LOS DATOS ");
+        }else{
+            registrarHorario();
+        }
+    }//GEN-LAST:event_btnAsignarActionPerformed
+
+    private void btnActualizarHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarHorarioActionPerformed
+        cargarEmpleados();
+    }//GEN-LAST:event_btnActualizarHorarioActionPerformed
+
+    private void btnBuscarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEmpleadoActionPerformed
+        String dniBuscado = txtDniEmpleado.getText();
+        boolean encontrado = false;
+        for(Empleado r : Principal.listaEmpleados){
+            if(r.getDNI().equals(dniBuscado)){
+                JOptionPane.showMessageDialog(null,"EMPLEADO ENCONTRADO " + r.getDNI());
+                txtEmpleadoNombre.setText(r.getNombreEmpleado());
+                encontrado = true;
+                break;
+            }
+        }
+        if (!encontrado){
+            JOptionPane.showMessageDialog(null,"EMPLEADO NO ENCONTRADO ");
+        }
+    }//GEN-LAST:event_btnBuscarEmpleadoActionPerformed
+
+    private void CheckClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckClienteActionPerformed
+        if(CheckCliente.isSelected()){
+            txtDniClienteReporte.setEnabled(true);
+        }else{
+             txtDniClienteReporte.setEnabled(false);
+        }
+    }//GEN-LAST:event_CheckClienteActionPerformed
+
+    private void CheckFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckFechaActionPerformed
+        if(CheckFecha.isSelected()){
+            DateChooserReporte.setEnabled(true);
+        }else{
+             DateChooserReporte.setEnabled(false);
+        }
+
+
+    }//GEN-LAST:event_CheckFechaActionPerformed
+
+    private void CheckEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckEmpleadoActionPerformed
+        if(CheckEmpleado.isSelected()){
+            txtDniEmpleadoReporte.setEnabled(true);
+        }else{
+             txtDniEmpleadoReporte.setEnabled(false);
+        }
+    }//GEN-LAST:event_CheckEmpleadoActionPerformed
+
+    private void CheckProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckProductoActionPerformed
+        if(CheckProducto.isSelected()){
+            boxProducto.setEnabled(true);
+        }else{
+             boxProducto.setEnabled(false);
+        }
+    }//GEN-LAST:event_CheckProductoActionPerformed
+
+    private void CheckTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckTipoActionPerformed
+        if(CheckTipo.isSelected()){
+            boxTipoPago.setEnabled(true);
+        }else{
+             boxTipoPago.setEnabled(false);
+        }
+    }//GEN-LAST:event_CheckTipoActionPerformed
+
+    private void btnBuscarClienteReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClienteReporteActionPerformed
+        String dniBuscado = txtDniClienteReporte.getText();
+        boolean encontrado = false;
+        for(Cliente r : Principal.listaClientes){
+            if(r.getDNI().equals(dniBuscado)){
+                JOptionPane.showMessageDialog(null,"CLIENTE ENCONTRADO " + r.getDNI());
+                txtClienteNombreReporte.setText(r.getNombreCliente());
+                encontrado = true;
+                break;
+            }
+        }
+        if (!encontrado){
+            JOptionPane.showMessageDialog(null,"CLIENTE NO ENCONTRADO ");
+        }
+    }//GEN-LAST:event_btnBuscarClienteReporteActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        String dniBuscado = txtDniEmpleadoReporte.getText();
+        boolean encontrado = false;
+        for(Empleado r : Principal.listaEmpleados){
+            if(r.getDNI().equals(dniBuscado)){
+                JOptionPane.showMessageDialog(null,"EMPLEADO ENCONTRADO " + r.getDNI());
+                txtNombreEmpleadoReporte.setText(r.getNombreEmpleado());
+                encontrado = true;
+                break;
+            }
+        }
+        if (!encontrado){
+            JOptionPane.showMessageDialog(null,"EMPLEADO NO ENCONTRADO ");
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
+    
     public void BotonPresionado(JButton boton, Color color, boolean[] isPressed, int array){
         isPressed[array] = true;
         boton.setBackground(color);
@@ -735,12 +976,27 @@ public class Frm_Gerente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox CheckCliente;
+    private javax.swing.JCheckBox CheckEmpleado;
+    private javax.swing.JCheckBox CheckFecha;
+    private javax.swing.JCheckBox CheckProducto;
+    private javax.swing.JCheckBox CheckTipo;
+    private com.toedter.calendar.JDateChooser DateChooseHorario;
     private com.toedter.calendar.JDateChooser DateChooser;
+    private com.toedter.calendar.JDateChooser DateChooserReporte;
     private javax.swing.JPanel Panel_Horarios;
     private javax.swing.JPanel Panel_Reclamos;
     private javax.swing.JPanel Panel_Reportes;
+    private javax.swing.JComboBox<String> boxProducto;
+    private javax.swing.JComboBox<String> boxTipoPago;
+    private javax.swing.JComboBox<String> boxTurno;
     private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnActualizarHorario;
+    private javax.swing.JButton btnAsignar;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnBuscarClienteReporte;
+    private javax.swing.JButton btnBuscarEmpleado;
+    private javax.swing.JButton btnGenerarReporte;
     private javax.swing.JButton btnRegistrarCliente;
     private javax.swing.JButton btn_Cerrar;
     private javax.swing.JButton btn_Horarios;
@@ -748,19 +1004,7 @@ public class Frm_Gerente extends javax.swing.JFrame {
     private javax.swing.JButton btn_RegistrarReclamo;
     private javax.swing.JButton btn_Reportes;
     private javax.swing.JComboBox<String> comboTipo;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -797,29 +1041,24 @@ public class Frm_Gerente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTable tabla_Clientes;
+    private javax.swing.JTable tabla_Empleados;
+    private javax.swing.JTable tabla_Horarios;
+    private javax.swing.JTable tabla_Reporte;
     private javax.swing.JTable tabla_reclamos;
-    private javax.swing.JTable tabla_reclamos1;
-    private javax.swing.JTable tabla_reclamos2;
-    private javax.swing.JTable tabla_reclamos3;
-    private javax.swing.JTextField txtCliente1;
-    private javax.swing.JTextField txtCliente2;
-    private javax.swing.JTextField txtCliente3;
-    private javax.swing.JTextField txtCliente4;
-    private javax.swing.JTextField txtCliente6;
+    private javax.swing.JTextField txtClienteNombreReporte;
     private javax.swing.JTextField txtDNICliente;
     private javax.swing.JTextField txtDniClienteRegistrar;
-    private javax.swing.JTextField txtFecha;
+    private javax.swing.JTextField txtDniClienteReporte;
+    private javax.swing.JTextField txtDniEmpleado;
+    private javax.swing.JTextField txtDniEmpleadoReporte;
+    private javax.swing.JTextField txtEmpleadoNombre;
     private javax.swing.JTextField txtNombreCliente;
     private javax.swing.JTextField txtNombreClienteRegistrar;
+    private javax.swing.JTextField txtNombreEmpleadoReporte;
     private javax.swing.JTextField txtObservacion;
     // End of variables declaration//GEN-END:variables
 }
