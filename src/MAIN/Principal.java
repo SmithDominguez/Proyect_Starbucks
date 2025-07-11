@@ -4,6 +4,7 @@
  */
 package MAIN;
 
+import CLASES.Cliente;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -36,7 +37,7 @@ public class Principal {
     
     public static List<Usuario> listaUsuarios = new ArrayList<>();
     public static List<Reclamo> listaReclamos = new ArrayList<>();
-    
+    public static List<Cliente> listaClientes = new ArrayList<>();
     
     public static void main(String[] args) {
         //Abrir pantalla Principal

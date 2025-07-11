@@ -229,7 +229,7 @@ public class Frm_Cajero extends javax.swing.JFrame {
         jButton11.setText("Registrar cliente");
         Panel_Pedidos.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, -1, -1));
 
-        jPanel1.add(Panel_Pedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 740, 450));
+        jPanel1.add(Panel_Pedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 740, 480));
         Panel_Pedidos.getAccessibleContext().setAccessibleDescription("");
 
         Enviar_Comprobantes.setBackground(new java.awt.Color(255, 255, 255));
@@ -314,7 +314,7 @@ public class Frm_Cajero extends javax.swing.JFrame {
         jButton6.setText("Registrar Tipo Pago");
         jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 430, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 460));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

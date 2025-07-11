@@ -3,41 +3,42 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package CLASES;
+import java.util.Date;
 
 /**
  *
  * @author xyw
  */
 public class Reclamo {
-    private String codigo;
-    private String cliente;
-    private String fecha;
+    private int codigo;
+    private String dniCliente;
+    private Date fecha;
     private String tipo;
-    private String descripcion;
+    private String observacion;
 
-    public Reclamo(String codigo, String cliente, String fecha, String tipo, String descripcion) {
+    public Reclamo(int codigo, String dniCliente, Date fecha, String tipo, String observacion) {
         this.codigo = codigo;
-        this.cliente = cliente;
+        this.dniCliente = dniCliente;
         this.fecha = fecha;
         this.tipo = tipo;
-        this.descripcion = descripcion;
+        this.observacion = observacion;
     }
 
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public String getCliente() {
-        return cliente;
+    public String getDNICliente() {
+        return dniCliente;
     }
 
-    public String getFecha() {
+    public Date getFecha() {
         return fecha;
     }
     public String getTipo() {
         return tipo;
     }
-    public String getDescripcion() {
-        return descripcion;
+    public String getObservacion() {
+        return observacion;
     }
 }
