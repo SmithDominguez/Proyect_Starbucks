@@ -33,7 +33,7 @@ public class Frm_Gerente extends javax.swing.JFrame {
         Date fechaEspecifica = new Date(2025,7,15);
         Reclamo prueba = new Reclamo(codigo++, "Juan Pérez", fechaEspecifica, "Producto en mal estado", "El café llegó derramado y con la tapa rota.");
         Principal.listaReclamos.add(prueba);
-        
+        //
         cargarReclamos();
         JButton[] botones = {
             btn_Reclamos,
