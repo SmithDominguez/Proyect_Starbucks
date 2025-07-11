@@ -5,13 +5,13 @@
 package MAIN;
 
 import CLASES.Cliente;
-<<<<<<< HEAD
+
 import CLASES.Pedido;
-=======
+
 import CLASES.Empleado;
 import CLASES.Horario;
 import CLASES.Inventario;
->>>>>>> 94f84d8f57cd2a48743240025d9257af15646579
+
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -28,14 +28,14 @@ import FORMULARIOS.Frm_Encargado;
 import FORMULARIOS.Frm_Cajero;
 import CLASES.Usuario;
 import CLASES.Reclamo;
-<<<<<<< HEAD
+
 import CLASES.Pedido;
 import CLASES.Producto;
-=======
+
 import CLASES.Reporte;
 import CLASES.SolicitudCompra;
 import java.text.SimpleDateFormat;
->>>>>>> 94f84d8f57cd2a48743240025d9257af15646579
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -85,10 +85,10 @@ public class Principal {
         listaUsuarios.add(new Usuario("cajero@starbucks.com", "9876", "Cajero"));
         listaUsuarios.add(new Usuario("supervisor@starbucks.com", "6789", "Supervisor"));
         
-<<<<<<< HEAD
+
         cargarProductosStarbucks(); // Carga los productos primero
         pantallaCajero = new Frm_Cajero(); 
-=======
+
         //Reportes de prueba
         listaReportes.add(new Reporte("Josesito Marcino", new Date(2025,6,10), "Alberto Doriban", "Cafe", "Efectivo"));
         listaReportes.add(new Reporte("Jabo Jorge", new Date(2025,6,8), "Alberto Doriban", "Pan", "Efectivo"));
@@ -97,7 +97,7 @@ public class Principal {
         listaReportes.add(new Reporte("Jabo Jorge", new Date(2025,6,10), "Juan Granjero", "Pan", "Tarjeta"));
         
         //Inventario de prueba
->>>>>>> 94f84d8f57cd2a48743240025d9257af15646579
+
         
         pantallaPrincipal.setVisible(true);
         pantallaPrincipal.setSize(610, 510);

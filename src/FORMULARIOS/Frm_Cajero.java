@@ -10,7 +10,10 @@ import CLASES.Producto;
 import java.awt.Color;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import java.text.SimpleDateFormat;
+
 /**
  *
  * @author sofia
@@ -19,11 +22,15 @@ public class Frm_Cajero extends javax.swing.JFrame {
     DefaultTableModel modeloTablaPedidos;
     DefaultTableModel modeloTablaClientes;
     DefaultTableModel tablaProductos;
+    DefaultTableModel modeloTablaComprobantes;
     /**
      * Creates new form Frm_InicioSesion_Cajero
      */
     public Frm_Cajero() {
         initComponents();
+        cargarTiposComprobante();
+        Panel_Pedidos.setVisible(true);
+       Enviar_Comprobantes.setVisible(false);
         this.setLocationRelativeTo(this);
         modeloTablaPedidos = (DefaultTableModel) TablaPedidos.getModel();
         cargarPedidos();
@@ -32,12 +39,21 @@ public class Frm_Cajero extends javax.swing.JFrame {
          jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Efectivo", "Tarjeta", "Yape", "Plin"}));
            cargarProductos();
          modeloTablaClientes=(DefaultTableModel) TablaClientes.getModel();
-         
+         modeloTablaComprobantes = (DefaultTableModel) jTable2.getModel();
+         modeloTablaComprobantes.setRowCount(0); 
+
+         jButton1.addActionListener(new java.awt.event.ActionListener() {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1ActionPerformed(evt);
+    }
+});
          jComboBox3.addActionListener(new java.awt.event.ActionListener() {
     public void actionPerformed(java.awt.event.ActionEvent evt) {
         actualizarPrecio(); // método para mostrar el precio al seleccionar producto
     }
 });
+        
+
     }
 
     /**
@@ -188,6 +204,69 @@ private void registrarCliente()
     JOptionPane.showMessageDialog(this, "Cliente registrado correctamente");
     cargarClientes();
 }
+private void activarPanel(javax.swing.JPanel panelActivo) {
+    // Oculta todos los paneles
+    Panel_Pedidos.setVisible(false);
+    Enviar_Comprobantes.setVisible(false);
+
+    // Muestra solo el panel activo
+    panelActivo.setVisible(true);
+}
+private void mostrarPanel(JPanel panel) {
+    Panel_Pedidos.setVisible(false);
+    Enviar_Comprobantes.setVisible(false);
+
+    panel.setVisible(true);
+}
+
+private void cargarTiposComprobante() {
+    jComboBox2.removeAllItems();
+    jComboBox2.addItem("Boleta");
+    jComboBox2.addItem("Factura");
+    jComboBox2.addItem("Nota de crédito");
+    jComboBox2.addItem("Nota de débito");
+}
+
+
+private void registrarComprobante() {
+    // Obtiene los valores de los campos de texto y combo
+    String nombre = jTextField5.getText();
+    String apellido = jTextField6.getText();
+    String dni = jTextField7.getText();
+    String tipoComprobante = jComboBox2.getSelectedItem().toString();
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    String fecha = "";
+    if (jDateChooser1.getDate() != null) {
+        fecha = sdf.format(jDateChooser1.getDate());
+    }
+    String total = jTextField4.getText();
+    String subtotal = jTextField10.getText();
+    String igv = jTextField9.getText();
+
+    // Validación simple (opcional)
+    if (nombre.isEmpty() || apellido.isEmpty() || dni.isEmpty() || total.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Complete todos los campos obligatorios");
+        return;
+    }
+
+    // Agrega la fila al modelo de la tabla
+    modeloTablaComprobantes.addRow(new Object[] {
+        nombre, apellido, dni, tipoComprobante,fecha,  total, subtotal, igv
+    });
+
+    // Limpia los campos después de registrar (opcional)
+    jTextField5.setText("");
+    jTextField6.setText("");
+    jTextField7.setText("");
+    
+    jTextField4.setText("");
+    jTextField10.setText("");
+    jTextField9.setText("");
+    jComboBox2.setSelectedIndex(0);
+
+    JOptionPane.showMessageDialog(this, "Comprobante registrado correctamente");
+}
+
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -234,7 +313,6 @@ private void registrarCliente()
         jLabel13 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
@@ -242,6 +320,7 @@ private void registrarCliente()
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jButton10 = new javax.swing.JButton();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -267,12 +346,22 @@ private void registrarCliente()
         jButton1.setForeground(new java.awt.Color(0, 102, 102));
         jButton1.setText("Pedidos");
         jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 102, 102));
         jButton2.setText("Enviar Comprobantes");
         jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 150, -1));
 
         jButton3.setBackground(new java.awt.Color(0, 102, 102));
@@ -286,7 +375,7 @@ private void registrarCliente()
         });
         jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 440));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 520));
 
         Panel_Pedidos.setBackground(new java.awt.Color(255, 255, 255));
         Panel_Pedidos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -418,42 +507,52 @@ private void registrarCliente()
         jButton5.setBackground(new java.awt.Color(0, 102, 102));
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Emitir comprobante");
-        Enviar_Comprobantes.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, -1, -1));
+        jButton5.setText("Enviar comprobante");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        Enviar_Comprobantes.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, -1, -1));
 
         jLabel9.setText("Total :");
-        Enviar_Comprobantes.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
-        Enviar_Comprobantes.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 140, -1));
+        Enviar_Comprobantes.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
+
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        Enviar_Comprobantes.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 140, -1));
 
         jLabel10.setText("Nombre :");
-        Enviar_Comprobantes.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
-        Enviar_Comprobantes.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 130, -1));
+        Enviar_Comprobantes.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+        Enviar_Comprobantes.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 130, -1));
 
         jLabel11.setText("Apellido :");
-        Enviar_Comprobantes.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
-        Enviar_Comprobantes.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 130, -1));
+        Enviar_Comprobantes.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+        Enviar_Comprobantes.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 130, -1));
 
         jLabel12.setText("DNI o RUC :");
-        Enviar_Comprobantes.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, -1));
-        Enviar_Comprobantes.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 130, -1));
+        Enviar_Comprobantes.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        Enviar_Comprobantes.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 130, -1));
 
         jLabel13.setText("Tipo de comprobante :");
-        Enviar_Comprobantes.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
+        Enviar_Comprobantes.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Enviar_Comprobantes.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 130, -1));
+        Enviar_Comprobantes.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 130, -1));
 
         jLabel14.setText("Fecha de emisión :");
-        Enviar_Comprobantes.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
-        Enviar_Comprobantes.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 130, -1));
+        Enviar_Comprobantes.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
         jLabel15.setText("IGV :");
-        Enviar_Comprobantes.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, -1, -1));
-        Enviar_Comprobantes.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 140, -1));
+        Enviar_Comprobantes.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
+        Enviar_Comprobantes.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 400, 140, -1));
 
         jLabel16.setText("Subtotal :");
-        Enviar_Comprobantes.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, -1, -1));
-        Enviar_Comprobantes.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 140, -1));
+        Enviar_Comprobantes.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
+        Enviar_Comprobantes.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 140, -1));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -468,17 +567,23 @@ private void registrarCliente()
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        Enviar_Comprobantes.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 720, 340));
+        Enviar_Comprobantes.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 720, 340));
 
         jButton10.setBackground(new java.awt.Color(0, 102, 102));
         jButton10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jButton10.setText("Enviar comprobante");
-        Enviar_Comprobantes.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, 160, -1));
+        jButton10.setText("Emitir comprobante");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        Enviar_Comprobantes.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, 160, -1));
+        Enviar_Comprobantes.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 130, -1));
 
-        jPanel1.add(Enviar_Comprobantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 600, -1, -1));
+        jPanel1.add(Enviar_Comprobantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 1000, 600));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 510));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 650));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -503,6 +608,30 @@ private void registrarCliente()
         // BOTON REGISTRAR CLIENTE
          registrarCliente();
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // BOTON ENVIAR COMPROBANTES
+                 mostrarPanel(Enviar_Comprobantes);                    
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // BOTON PEDIDOS
+           mostrarPanel(Panel_Pedidos);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // BOTON ENVIAR COMPROBANTE
+        registrarComprobante();
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // BOTON ENVIAR COMPROBANTE
+          JOptionPane.showMessageDialog(this, "Comprobante enviado correctamente al sistema.");
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     
     /**
@@ -558,6 +687,7 @@ private void registrarCliente()
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -588,7 +718,6 @@ private void registrarCliente()
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField txtPrecio;
     private javax.swing.JTextField txtcliente;
