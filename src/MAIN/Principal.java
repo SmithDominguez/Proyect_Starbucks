@@ -5,6 +5,7 @@
 package MAIN;
 
 import CLASES.Cliente;
+import CLASES.Pedido;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,6 +22,8 @@ import FORMULARIOS.Frm_Encargado;
 import FORMULARIOS.Frm_Cajero;
 import CLASES.Usuario;
 import CLASES.Reclamo;
+import CLASES.Pedido;
+import CLASES.Producto;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.SwingUtilities;
@@ -39,6 +42,10 @@ public class Principal {
     public static List<Reclamo> listaReclamos = new ArrayList<>();
     public static List<Cliente> listaClientes = new ArrayList<>();
     
+    public static List<Pedido> listaPedidos = new ArrayList<>();
+    public static List<Producto> listaProductos = new ArrayList<>();
+
+    
     public static void main(String[] args) {
         //Abrir pantalla Principal
         // Proyecto Starbucks
@@ -54,7 +61,28 @@ public class Principal {
         listaUsuarios.add(new Usuario("cajero@starbucks.com", "9876", "Cajero"));
         listaUsuarios.add(new Usuario("supervisor@starbucks.com", "6789", "Supervisor"));
         
+        cargarProductosStarbucks(); // Carga los productos primero
+        pantallaCajero = new Frm_Cajero(); 
+        
         pantallaPrincipal.setVisible(true);
         pantallaPrincipal.setSize(610, 510);
+        
+        
+        
+        
+        
     }
+    public static void cargarProductosStarbucks() {
+    listaProductos.add(new Producto("Frappuccino", 12.50));
+    listaProductos.add(new Producto("Café Latte", 8.00));
+    listaProductos.add(new Producto("Capuccino", 9.50));
+    listaProductos.add(new Producto("Mocha", 10.00));
+    listaProductos.add(new Producto("Americano", 7.00));
+    listaProductos.add(new Producto("Espresso", 6.50));
+    listaProductos.add(new Producto("Cold Brew", 11.00));
+    listaProductos.add(new Producto("Chocolate Caliente", 8.50));
+    listaProductos.add(new Producto("Té Chai Latte", 9.00));
+    listaProductos.add(new Producto("Té Verde Matcha", 9.50));
+}
+
 }
