@@ -7,6 +7,7 @@ package MAIN;
 import CLASES.Cliente;
 import CLASES.Empleado;
 import CLASES.Horario;
+import CLASES.Inventario;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,6 +25,7 @@ import FORMULARIOS.Frm_Cajero;
 import CLASES.Usuario;
 import CLASES.Reclamo;
 import CLASES.Reporte;
+import CLASES.SolicitudCompra;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -45,8 +47,10 @@ public class Principal {
     public static List<Cliente> listaClientes = new ArrayList<>();
     public static List<Empleado> listaEmpleados = new ArrayList<>();
     public static List<Horario> listaHorarios = new ArrayList<>();
-     public static List<Reporte> listaReportes = new ArrayList<>();
-     
+    public static List<Reporte> listaReportes = new ArrayList<>();
+    public static List<Inventario> listaInventario = new ArrayList<>();
+    public static List<SolicitudCompra> listaSolicitudCompra = new ArrayList<>();
+    
     public static void main(String[] args) {
         //Abrir pantalla Principal
         // Proyecto Starbucks
@@ -74,6 +78,8 @@ public class Principal {
         listaReportes.add(new Reporte("Josesito Marcino", new Date(2025,6,9), "Juan Granjero", "Cafe", "Tarjeta"));
         listaReportes.add(new Reporte("Josesito Marcino", new Date(2025,6,10), "Juan Granjero", "Cafe", "Efectivo"));
         listaReportes.add(new Reporte("Jabo Jorge", new Date(2025,6,10), "Juan Granjero", "Pan", "Tarjeta"));
+        
+        //Inventario de prueba
         
         pantallaPrincipal.setVisible(true);
         pantallaPrincipal.setSize(610, 510);
